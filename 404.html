@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 Party Not Found - Rental Disco</title>
+  <link rel="icon" type="image/jpeg" href="images/rentaldisco_logo.jpg">
+  <meta name="description" content="Oops! Looks like this channel is silent. Let's get you back to the party.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <script>
+    tailwind.config = { 
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'brand-primary': '#9333EA', /* Vibrant Purple */
+            'brand-dark': '#020617',    /* Deep Slate */
+            'brand-light': '#FAF5FF',   /* Soft Purple Tint */
+            white: '#FFFFFF'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    [dir="rtl"] { direction: rtl; }
+    
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in { animation: fadeInUp 0.8s ease-out; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+    }
+    .animate-float { animation: float 3s ease-in-out infinite; }
+
+    /* Custom glitch effect for the 404 */
+    .glitch-text {
+      text-shadow: 2px 2px 0px rgba(147, 51, 234, 0.5), -2px -2px 0px rgba(59, 130, 246, 0.5);
+    }
+  </style>
+</head>
+<body class="font-sans antialiased transition-colors duration-300 bg-white dark:bg-[#0a0a0a] flex flex-col min-h-screen">
+
+  <main class="flex-grow flex flex-col items-center justify-center relative overflow-hidden min-h-screen">
+    
+    <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-primary/20 rounded-full blur-[100px] animate-pulse pointer-events-none"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[100px] animate-pulse pointer-events-none" style="animation-delay: 1.5s;"></div>
+
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 animate-fade-in py-20">
+      
+      <div class="w-24 h-24 mx-auto bg-gray-50 dark:bg-[#111] border border-gray-200 dark:border-gray-800 rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(147,51,234,0.3)] animate-float mb-8">
+        <i class="fas fa-headphones-alt text-4xl text-brand-primary"></i>
+      </div>
+
+      <h1 class="text-8xl md:text-9xl font-black text-transparent bg-clip-text bg-gradient-to-br from-brand-dark to-brand-primary dark:from-white dark:to-brand-primary tracking-tighter mb-4 glitch-text">
+        404
+      </h1>
+      
+      <h2 class="text-3xl md:text-4xl font-black text-brand-dark dark:text-white uppercase tracking-widest mb-6">
+        The Music <span class="text-brand-primary">Stopped.</span>
+      </h2>
+      
+      <p class="text-lg text-gray-600 dark:text-gray-400 font-light mb-10 max-w-lg mx-auto leading-relaxed">
+        Looks like you tuned into a channel that doesn't exist. Let's get you back to the dance floor before the next drop.
+      </p>
+
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="index.html" class="inline-flex items-center justify-center px-8 py-4 bg-brand-primary hover:bg-[#7e22ce] text-white font-bold uppercase tracking-widest text-xs transition-all duration-300 shadow-[0_0_15px_rgba(147,51,234,0.4)] rounded">
+          <i class="fas fa-home mr-3"></i> Back to Party
+        </a>
+        <a href="equipment.html" class="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-gray-300 dark:border-gray-700 text-brand-dark dark:text-white hover:border-brand-primary hover:text-brand-primary font-bold uppercase tracking-widest text-xs transition-all duration-300 rounded">
+          View Equipment
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <script>
+    // Set Theme explicitly to ensure consistency based on local storage
+    const html = document.documentElement;
+    if (localStorage.getItem('theme') === 'dark') {
+      html.classList.add('dark');
+    } else {
+      html.classList.remove('dark');
+    }
+
+    // Set RTL explicitly based on local storage
+    if (localStorage.getItem('direction') === 'rtl') {
+      html.setAttribute('dir', 'rtl');
+    }
+  </script>
+</body>
+</html>

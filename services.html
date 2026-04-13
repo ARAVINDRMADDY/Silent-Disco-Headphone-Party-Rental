@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Services - Rental Disco</title>
+  <link rel="icon" type="image/jpeg" href="images/rentaldisco_logo.jpg">
+  <meta name="description" content="Explore our premium silent disco rental services, from DIY house parties to full-service festival production.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <script>
+    tailwind.config = { 
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'brand-primary': '#9333EA', /* Vibrant Purple */
+            'brand-dark': '#020617',    /* Deep Slate */
+            'brand-light': '#FAF5FF',   /* Soft Purple Tint */
+            white: '#FFFFFF'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    [dir="rtl"] { direction: rtl; }
+    
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in { animation: fadeInUp 0.8s ease-out; }
+
+    .service-card:hover .service-icon {
+      transform: scale(1.1) rotate(5deg);
+    }
+  </style>
+</head>
+<body class="font-sans antialiased transition-colors duration-300 bg-white dark:bg-[#0a0a0a] flex flex-col min-h-screen">
+
+  <nav class="bg-white dark:bg-brand-dark fixed w-full top-0 z-50 border-b border-gray-200 dark:border-white/10 transition-colors duration-300">
+    <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-[90px]">
+
+        <div class="flex-shrink-0">
+          <a href="index.html" class="flex items-center space-x-3">
+            <div class="flex flex-col">
+              <span class="text-2xl font-black tracking-tight text-brand-dark dark:text-white uppercase">Rental<span class="text-brand-primary">Disco.</span></span>
+            </div>
+          </a>
+        </div>
+
+        <div class="hidden xl:flex items-center justify-center flex-1 mx-8">
+          <div class="flex items-center space-x-8">
+
+            <div class="relative group h-[90px] flex items-center">
+              <button class="text-xs uppercase tracking-[0.15em] font-semibold text-gray-900 dark:text-gray-100 hover:text-brand-primary transition-colors flex items-center relative py-2">
+                <span>Home</span>
+                <i class="fas fa-chevron-down text-[10px] ml-2 transition-transform duration-300 group-hover:rotate-180"></i>
+                <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-brand-primary transition-all duration-300 group-hover:w-full"></span>
+              </button>
+              
+              <div class="absolute top-[90px] left-0 w-56 bg-white dark:bg-[#111] border border-t-0 border-gray-200 dark:border-white/10 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0 z-50">
+                <div class="py-4 px-6 flex flex-col space-y-4">
+                  <a href="index.html" class="text-sm font-medium text-gray-500 hover:text-brand-primary dark:text-gray-400 dark:hover:text-brand-primary transition-colors">HOME PAGE 01</a>
+                  <a href="home-2.html" class="text-sm font-medium text-gray-500 hover:text-brand-primary dark:text-gray-400 dark:hover:text-brand-primary transition-colors">HOME PAGE 02</a>
+                </div>
+              </div>
+            </div>
+
+            <a href="about.html" class="relative group text-xs uppercase tracking-[0.15em] font-semibold text-gray-900 dark:text-gray-100 hover:text-brand-primary transition-colors py-2">
+              About
+              <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-brand-primary transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            
+            <a href="services.html" class="relative group text-xs uppercase tracking-[0.15em] font-semibold text-brand-primary transition-colors py-2">
+              Services
+              <span class="absolute bottom-0 left-0 w-full h-[2px] bg-brand-primary transition-all duration-300"></span>
+            </a>
+            
+            <a href="equipment.html" class="relative group text-xs uppercase tracking-[0.15em] font-semibold text-gray-900 dark:text-gray-100 hover:text-brand-primary transition-colors py-2">
+              Equipment
+              <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-brand-primary transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            
+            <a href="blog.html" class="relative group text-xs uppercase tracking-[0.15em] font-semibold text-gray-900 dark:text-gray-100 hover:text-brand-primary transition-colors py-2">
+              Blog
+              <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-brand-primary transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            
+            <a href="contact.html" class="relative group text-xs uppercase tracking-[0.15em] font-semibold text-gray-900 dark:text-gray-100 hover:text-brand-primary transition-colors py-2">
+              Contact
+              <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-brand-primary transition-all duration-300 group-hover:w-full"></span>
+            </a>
+
+            <div class="relative group h-[90px] flex items-center">
+              <button class="text-xs uppercase tracking-[0.15em] font-semibold text-gray-900 dark:text-gray-100 hover:text-brand-primary transition-colors flex items-center relative py-2">
+                <span>Dashboard</span>
+                <i class="fas fa-chevron-down text-[10px] ml-2 transition-transform duration-300 group-hover:rotate-180"></i>
+                <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-brand-primary transition-all duration-300 group-hover:w-full"></span>
+              </button>
+              
+              <div class="absolute top-[90px] right-0 w-64 bg-white dark:bg-[#111] border border-t-0 border-gray-200 dark:border-white/10 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0 z-50">
+                <div class="py-4 px-6 flex flex-col space-y-5">
+                  <a href="admin-dashboard.html" class="flex items-center text-sm font-medium text-gray-500 hover:text-brand-primary dark:text-gray-400 dark:hover:text-brand-primary transition-colors">
+                    <i class="fas fa-user-shield w-6"></i> Admin Dashboard
+                  </a>
+                  <a href="user-dashboard.html" class="flex items-center text-sm font-medium text-gray-500 hover:text-brand-primary dark:text-gray-400 dark:hover:text-brand-primary transition-colors">
+                    <i class="fas fa-user w-6"></i> User Dashboard
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="hidden xl:flex items-center space-x-4">
+          <button type="button" onclick="window.location.href='login.html'" class="bg-brand-dark dark:bg-white text-white dark:text-brand-dark hover:bg-brand-primary dark:hover:bg-brand-primary dark:hover:text-white px-6 py-3 text-xs uppercase tracking-wider font-bold transition-all duration-300 flex items-center space-x-2">
+            <span>Login</span>
+            <i class="fas fa-arrow-right text-[10px]"></i>
+          </button>
+          
+          <a href="register.html" class="bg-brand-dark dark:bg-white text-white dark:text-brand-dark hover:bg-brand-primary dark:hover:bg-brand-primary dark:hover:text-white px-6 py-3 text-xs uppercase tracking-wider font-bold transition-all duration-300 flex items-center space-x-2">
+            <span>Register</span>
+            <i class="fas fa-arrow-right text-[10px]"></i>
+          </a>
+
+          <div class="h-8 w-px bg-gray-200 dark:bg-gray-800 mx-2"></div>
+
+          <button id="theme-toggle" class="w-10 h-10 flex items-center justify-center text-gray-400 hover:text-brand-primary dark:hover:text-brand-primary transition-colors duration-300" title="Toggle Theme">
+            <i class="fas fa-moon dark:hidden text-lg"></i>
+            <i class="fas fa-sun hidden dark:inline text-lg"></i>
+          </button>
+          
+          <button id="rtl-toggle" class="text-xs font-bold text-gray-400 hover:text-brand-primary transition-colors duration-300" title="Toggle RTL">
+            RTL
+          </button>
+        </div>
+
+        <div class="xl:hidden flex items-center">
+          <button id="mobile-menu-button" class="text-gray-900 dark:text-white hover:text-brand-primary focus:outline-none transition duration-300">
+            <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path id="menu-icon" stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+              <path id="close-icon" class="hidden" stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden xl:hidden bg-white dark:bg-[#111] border-b border-gray-200 dark:border-gray-800 shadow-2xl">
+      <div class="px-6 pt-4 pb-8 space-y-0 max-h-[calc(100vh-90px)] overflow-y-auto">
+
+        <div class="border-b border-gray-100 dark:border-white/5">
+          <button id="mobile-home-dropdown" class="w-full flex items-center justify-between py-4 text-gray-900 dark:text-white hover:text-brand-primary transition duration-300">
+            <span class="text-xs uppercase tracking-widest font-bold">Home</span>
+            <i class="fas fa-plus text-xs transition-transform duration-300" id="mobile-home-icon"></i>
+          </button>
+          <div id="mobile-home-menu" class="hidden pb-4 space-y-3 pl-4 border-l-2 border-brand-primary/20 ml-2">
+            <a href="index.html" class="block text-sm font-medium text-gray-500 hover:text-brand-primary dark:text-gray-400 transition duration-300 uppercase tracking-wider">01. Home Page</a>
+            <a href="home-2.html" class="block text-sm font-medium text-gray-500 hover:text-brand-primary dark:text-gray-400 transition duration-300 uppercase tracking-wider">02. Home Page</a>
+          </div>
+        </div>
+
+        <a href="about.html" class="block py-4 border-b border-gray-100 dark:border-white/5 text-gray-900 dark:text-white hover:text-brand-primary transition duration-300 text-xs uppercase tracking-widest font-bold">About</a>
+        <a href="services.html" class="block py-4 border-b border-gray-100 dark:border-white/5 text-brand-primary transition duration-300 text-xs uppercase tracking-widest font-bold">Services</a>
+        <a href="equipment.html" class="block py-4 border-b border-gray-100 dark:border-white/5 text-gray-900 dark:text-white hover:text-brand-primary transition duration-300 text-xs uppercase tracking-widest font-bold">Equipment</a>
+        <a href="blog.html" class="block py-4 border-b border-gray-100 dark:border-white/5 text-gray-900 dark:text-white hover:text-brand-primary transition duration-300 text-xs uppercase tracking-widest font-bold">Blog</a>
+        <a href="contact.html" class="block py-4 border-b border-gray-100 dark:border-white/5 text-gray-900 dark:text-white hover:text-brand-primary transition duration-300 text-xs uppercase tracking-widest font-bold">Contact</a>
+
+        <div class="border-b border-gray-100 dark:border-white/5">
+          <button id="mobile-dashboard-dropdown" class="w-full flex items-center justify-between py-4 text-gray-900 dark:text-white hover:text-brand-primary transition duration-300">
+            <span class="text-xs uppercase tracking-widest font-bold">Dashboard</span>
+            <i class="fas fa-plus text-xs transition-transform duration-300" id="mobile-dashboard-icon"></i>
+          </button>
+          <div id="mobile-dashboard-menu" class="hidden pb-4 space-y-4 pl-4 border-l-2 border-brand-primary/20 ml-2 mt-2">
+            <a href="admin-dashboard.html" class="flex items-center text-sm font-medium text-gray-500 hover:text-brand-primary dark:text-gray-400 transition duration-300 uppercase tracking-wider">
+              <i class="fas fa-user-shield w-6"></i> Admin
+            </a>
+            <a href="user-dashboard.html" class="flex items-center text-sm font-medium text-gray-500 hover:text-brand-primary dark:text-gray-400 transition duration-300 uppercase tracking-wider">
+              <i class="fas fa-user w-6"></i> User
+            </a>
+          </div>
+        </div>
+
+        <div class="pt-8 space-y-4">
+          <button type="button" onclick="window.location.href='login.html'" class="flex items-center justify-center w-full bg-brand-dark dark:bg-white text-white dark:text-brand-dark hover:bg-brand-primary dark:hover:bg-brand-primary dark:hover:text-white px-4 py-4 font-bold uppercase tracking-widest text-center transition duration-300 text-xs space-x-2">
+            <span>Login</span>
+            <i class="fas fa-arrow-right text-[10px]"></i>
+          </button>
+          <a href="register.html" class="flex items-center justify-center w-full bg-brand-dark dark:bg-white text-white dark:text-brand-dark hover:bg-brand-primary dark:hover:bg-brand-primary dark:hover:text-white px-4 py-4 font-bold uppercase tracking-widest text-center transition duration-300 text-xs space-x-2">
+            <span>Register</span>
+            <i class="fas fa-arrow-right text-[10px]"></i>
+          </a>
+          
+          <div class="flex justify-center space-x-8 pt-4">
+            <button id="mobile-theme-toggle" class="text-gray-400 hover:text-brand-primary transition-colors flex items-center text-sm font-bold uppercase tracking-widest">
+              <i class="fas fa-moon mr-2 dark:hidden"></i>
+              <i class="fas fa-sun mr-2 hidden dark:inline"></i> Theme
+            </button>
+            <button id="mobile-rtl-toggle" class="text-gray-400 hover:text-brand-primary transition-colors flex items-center text-sm font-bold uppercase tracking-widest">
+              <i class="fas fa-language mr-2"></i> RTL
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="flex-grow flex flex-col pt-[90px]">
+
+    <section class="relative min-h-[calc(100vh-90px)] flex items-center justify-center bg-brand-dark text-white overflow-hidden">
+      <div class="absolute inset-0 z-0">
+        <img src="images/dj-services.jpg" alt="DJ Services" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-[#0a0a0a]/60 dark:bg-[#111]/60"></div>
+      </div>
+      
+      <div class="absolute top-0 right-0 w-64 h-64 bg-brand-primary/30 rounded-full blur-3xl -mr-20 -mt-20 z-0"></div>
+      <div class="absolute bottom-0 left-0 w-80 h-80 bg-brand-light/20 rounded-full blur-3xl -ml-20 -mb-20 z-0"></div>
+      
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center animate-fade-in py-12 w-full">
+        <h1 class="text-4xl md:text-5xl lg:text-7xl font-black tracking-tight mb-6 uppercase drop-shadow-2xl">
+          Our <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-purple-400">Services</span>
+        </h1>
+        <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto font-light leading-relaxed drop-shadow-md">
+          From DIY backyard parties to massive, full-production corporate events, we provide everything you need to throw an unforgettable silent disco.
+        </p>
+      </div>
+    </section>
+
+    <section id="event-types" class="py-24 bg-white dark:bg-[#0a0a0a] transition-colors duration-300 border-b border-gray-200 dark:border-white/5">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <span class="text-brand-primary font-bold tracking-[0.2em] uppercase text-xs">Tailored Experiences</span>
+          <h2 class="text-3xl md:text-5xl font-black text-brand-dark dark:text-white mt-2 mb-6 uppercase tracking-tight">Events We Serve</h2>
+          <p class="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto font-light text-lg">No matter the size or location, our silent headphone rentals adapt perfectly to your unique crowd and venue.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="service-card bg-gray-50 dark:bg-[#111] border border-gray-100 dark:border-gray-800 rounded-xl overflow-hidden hover:shadow-2xl hover:border-brand-primary/50 transition-all duration-300 group">
+            <div class="h-48 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=600&q=80" alt="House Party" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+            </div>
+            <div class="p-6 relative">
+              <div class="service-icon absolute -top-8 right-6 w-14 h-14 bg-brand-primary text-white rounded-full flex items-center justify-center text-xl shadow-lg transition-transform duration-300">
+                <i class="fas fa-home"></i>
+              </div>
+              <h3 class="text-xl font-bold text-brand-dark dark:text-white mb-3 uppercase">Private Parties</h3>
+              <p class="text-gray-500 dark:text-gray-400 text-sm font-light mb-4">
+                Perfect for birthdays, backyard BBQs, and apartment gatherings. Keep the music loud without getting a noise complaint from the neighbors.
+              </p>
+              <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-300 font-light border-t border-gray-200 dark:border-gray-800 pt-4">
+                <li><i class="fas fa-check text-brand-primary mr-2 text-xs"></i> 10 - 50 Headphones</li>
+                <li><i class="fas fa-check text-brand-primary mr-2 text-xs"></i> Plug & Play Setup</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="service-card bg-gray-50 dark:bg-[#111] border border-gray-100 dark:border-gray-800 rounded-xl overflow-hidden hover:shadow-2xl hover:border-brand-primary/50 transition-all duration-300 group">
+            <div class="h-48 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=600&q=80" alt="Wedding Reception" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+            </div>
+            <div class="p-6 relative">
+              <div class="service-icon absolute -top-8 right-6 w-14 h-14 bg-brand-primary text-white rounded-full flex items-center justify-center text-xl shadow-lg transition-transform duration-300">
+              <i class="fas fa-running"></i>
+              </div>
+              <h3 class="text-xl font-bold text-brand-dark dark:text-white mb-3 uppercase">Weddings</h3>
+              <p class="text-gray-500 dark:text-gray-400 text-sm font-light mb-4">
+                Don't let venue curfews ruin your special day. Keep your guests dancing late into the night with our specialized wedding packages.
+              </p>
+              <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-300 font-light border-t border-gray-200 dark:border-gray-800 pt-4">
+                <li><i class="fas fa-check text-brand-primary mr-2 text-xs"></i> 50 - 200 Headphones</li>
+                <li><i class="fas fa-check text-brand-primary mr-2 text-xs"></i> Curated Playlists</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="service-card bg-gray-50 dark:bg-[#111] border border-gray-100 dark:border-gray-800 rounded-xl overflow-hidden hover:shadow-2xl hover:border-brand-primary/50 transition-all duration-300 group">
+            <div class="h-48 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1515169067868-5387ec356754?auto=format&fit=crop&w=600&q=80" alt="Corporate Event" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+            </div>
+            <div class="p-6 relative">
+              <div class="service-icon absolute -top-8 right-6 w-14 h-14 bg-brand-primary text-white rounded-full flex items-center justify-center text-xl shadow-lg transition-transform duration-300">
+                <i class="fas fa-briefcase"></i>
+              </div>
+              <h3 class="text-xl font-bold text-brand-dark dark:text-white mb-3 uppercase">Corporate</h3>
+              <p class="text-gray-500 dark:text-gray-400 text-sm font-light mb-4">
+                Ideal for conferences with multiple breakout sessions in one room, team-building retreats, or company holiday parties.
+              </p>
+              <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-300 font-light border-t border-gray-200 dark:border-gray-800 pt-4">
+                <li><i class="fas fa-check text-brand-primary mr-2 text-xs"></i> 100 - 5,000+ Units</li>
+                <li><i class="fas fa-check text-brand-primary mr-2 text-xs"></i> On-Site Tech Staff</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="service-card bg-gray-50 dark:bg-[#111] border border-gray-100 dark:border-gray-800 rounded-xl overflow-hidden hover:shadow-2xl hover:border-brand-primary/50 transition-all duration-300 group">
+            <div class="h-48 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=600&q=80" alt="Fitness Event" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+            </div>
+            <div class="p-6 relative">
+              <div class="service-icon absolute -top-8 right-6 w-14 h-14 bg-brand-primary text-white rounded-full flex items-center justify-center text-xl shadow-lg transition-transform duration-300">
+                <i class="fas fa-running"></i>
+              </div>
+              <h3 class="text-xl font-bold text-brand-dark dark:text-white mb-3 uppercase">Fitness & Yoga</h3>
+              <p class="text-gray-500 dark:text-gray-400 text-sm font-light mb-4">
+                Lead outdoor yoga sessions or high-intensity workouts. Instructors can pipe their microphone directly over motivating background music.
+              </p>
+              <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-300 font-light border-t border-gray-200 dark:border-gray-800 pt-4">
+                <li><i class="fas fa-check text-brand-primary mr-2 text-xs"></i> 20 - 100+ Units</li>
+                <li><i class="fas fa-check text-brand-primary mr-2 text-xs"></i> Mic Integrations</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="full-service" class="py-24 bg-gray-50 dark:bg-[#111] transition-colors duration-300 border-b border-gray-200 dark:border-white/5 relative overflow-hidden">
+      <div class="absolute -left-40 top-20 w-96 h-96 bg-brand-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+      
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          
+          <div class="relative grid grid-cols-2 gap-4">
+            <div class="space-y-4 translate-y-8">
+              <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=600&q=80" alt="Audio Mixer setup" class="w-full h-64 object-cover rounded-lg shadow-xl border-4 border-white dark:border-[#1a1a1a]">
+              <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=600&q=80" alt="DJ performing" class="w-full h-80 object-cover rounded-lg shadow-xl border-4 border-white dark:border-[#1a1a1a]">
+            </div>
+            <div class="space-y-4">
+              <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=600&q=80" alt="Event Lighting" class="w-full h-80 object-cover rounded-lg shadow-xl border-4 border-white dark:border-[#1a1a1a]">
+              <div class="bg-brand-primary p-8 rounded-lg shadow-xl text-white flex flex-col justify-center h-64">
+                <i class="fas fa-headset text-4xl mb-4"></i>
+                <h4 class="text-2xl font-black uppercase tracking-wider mb-2">We Handle <br>The Tech.</h4>
+                <p class="font-light text-sm text-white/80">You handle the party.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="space-y-8">
+            <span class="text-brand-primary font-bold tracking-[0.2em] uppercase text-xs">For Large Scale Events</span>
+            <h2 class="text-4xl md:text-5xl font-black text-brand-dark dark:text-white leading-tight uppercase tracking-tight">
+              White-Glove <span class="text-brand-primary">Production.</span>
+            </h2>
+            <p class="text-gray-600 dark:text-gray-400 text-lg leading-relaxed font-light">
+              Hosting a festival, massive corporate gathering, or university event? Don't stress about the setup. When you book our full-service production package, our expert team flies out to handle everything from start to finish.
+            </p>
+
+            <ul class="space-y-6 pt-4">
+              <li class="flex items-start">
+                <div class="flex-shrink-0 w-12 h-12 bg-white dark:bg-[#1a1a1a] rounded-full border border-gray-200 dark:border-white/10 flex items-center justify-center mt-1 text-brand-primary">
+                  <i class="fas fa-tools"></i>
+                </div>
+                <div class="ml-5">
+                  <h4 class="text-lg font-bold text-brand-dark dark:text-white uppercase tracking-wider">Professional Audio Setup</h4>
+                  <p class="text-gray-500 dark:text-gray-400 text-sm mt-1 font-light">We configure the RF transmitters to bypass interference, ensuring a flawless, crystal-clear signal for up to 5,000+ headphones.</p>
+                </div>
+              </li>
+              
+              <li class="flex items-start">
+                <div class="flex-shrink-0 w-12 h-12 bg-white dark:bg-[#1a1a1a] rounded-full border border-gray-200 dark:border-white/10 flex items-center justify-center mt-1 text-brand-primary">
+                  <i class="fas fa-music"></i>
+                </div>
+                <div class="ml-5">
+                  <h4 class="text-lg font-bold text-brand-dark dark:text-white uppercase tracking-wider">DJ & Talent Booking</h4>
+                  <p class="text-gray-500 dark:text-gray-400 text-sm mt-1 font-light">Need music? We can supply up to 3 live DJs who specialize in silent disco "DJ battles," keeping the crowd engaged across all channels.</p>
+                </div>
+              </li>
+
+              <li class="flex items-start">
+                <div class="flex-shrink-0 w-12 h-12 bg-white dark:bg-[#1a1a1a] rounded-full border border-gray-200 dark:border-white/10 flex items-center justify-center mt-1 text-brand-primary">
+                  <i class="fas fa-ticket-alt"></i>
+                </div>
+                <div class="ml-5">
+                  <h4 class="text-lg font-bold text-brand-dark dark:text-white uppercase tracking-wider">Headphone Distribution Staff</h4>
+                  <p class="text-gray-500 dark:text-gray-400 text-sm mt-1 font-light">Our trained staff runs the check-out/check-in kiosks, managing ID exchanges or deposit systems so you don't lose any gear.</p>
+                </div>
+              </li>
+            </ul>
+
+            <div class="pt-6">
+              <a href="contact.html" class="inline-flex items-center text-sm font-bold uppercase tracking-widest text-brand-primary hover:text-brand-dark dark:hover:text-white transition-colors">
+                Request a Production Quote <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="add-ons" class="py-24 bg-brand-dark text-white relative overflow-hidden border-b border-white/10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-brand-primary font-bold tracking-[0.2em] uppercase text-xs">Elevate Your Event</span>
+          <h2 class="text-3xl md:text-5xl font-black mt-2 mb-6 uppercase tracking-tight">Add-Ons & Extras</h2>
+          <p class="text-gray-400 font-light text-lg">Take your silent party to the next level with our premium aesthetic and technical upgrades.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          
+          <div class="bg-[#111] border border-white/10 p-8 rounded-xl hover:bg-[#151515] transition-colors duration-300 text-center">
+            <div class="w-20 h-20 mx-auto bg-brand-primary/20 rounded-full flex items-center justify-center mb-6">
+              <i class="fas fa-stamp text-3xl text-brand-primary"></i>
+            </div>
+            <h3 class="text-xl font-bold uppercase tracking-wider mb-3">Custom Branding</h3>
+            <p class="text-gray-400 text-sm font-light leading-relaxed mb-6">
+              Make the gear your own. We can apply custom vinyl decals of your corporate logo, wedding hashtag, or event branding to the earcups of every headphone.
+            </p>
+            <span class="text-brand-primary font-bold text-sm tracking-widest uppercase block">Starts at $99</span>
+          </div>
+
+          <div class="bg-[#111] border border-brand-primary p-8 rounded-xl shadow-[0_0_30px_rgba(147,51,234,0.15)] hover:shadow-[0_0_40px_rgba(147,51,234,0.3)] transition-all duration-300 text-center transform scale-105">
+            <div class="absolute top-0 right-0 bg-brand-primary text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-bl-lg">Popular</div>
+            <div class="w-20 h-20 mx-auto bg-brand-primary text-white rounded-full flex items-center justify-center mb-6">
+              <i class="fas fa-lightbulb text-3xl"></i>
+            </div>
+            <h3 class="text-xl font-bold uppercase tracking-wider mb-3">Neon Lighting Package</h3>
+            <p class="text-gray-300 text-sm font-light leading-relaxed mb-6">
+              Transform any dark room. Includes 4 sound-reactive LED wash lights, 2 mini-lasers, and a glowing DJ facade to create an instant club atmosphere.
+            </p>
+            <span class="text-brand-primary font-bold text-sm tracking-widest uppercase block">Starts at $149</span>
+          </div>
+
+          <div class="bg-[#111] border border-white/10 p-8 rounded-xl hover:bg-[#151515] transition-colors duration-300 text-center">
+            <div class="w-20 h-20 mx-auto bg-brand-primary/20 rounded-full flex items-center justify-center mb-6">
+              <i class="fas fa-sliders-h text-3xl text-brand-primary"></i>
+            </div>
+            <h3 class="text-xl font-bold uppercase tracking-wider mb-3">DJ Mixer Rentals</h3>
+            <p class="text-gray-400 text-sm font-light leading-relaxed mb-6">
+              Don't have professional audio gear? Rent our pre-configured iPad DJ setups or professional Pioneer DJ controllers, fully mapped to our transmitters.
+            </p>
+            <span class="text-brand-primary font-bold text-sm tracking-widest uppercase block">Starts at $75</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="nationwide-shipping" class="py-24 bg-gray-50 dark:bg-[#0a0a0a] transition-colors duration-300 border-b border-gray-200 dark:border-white/5">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-black text-brand-dark dark:text-white uppercase tracking-tight mb-4">Nationwide 2-Way Shipping</h2>
+          <p class="text-gray-500 dark:text-gray-400 font-light max-w-2xl mx-auto">We ship our rugged transport bins directly to your door anywhere in the lower 48 states. It is incredibly simple.</p>
+        </div>
+
+        <div class="relative max-w-5xl mx-auto">
+          <div class="hidden md:block absolute top-1/2 left-10 right-10 h-0.5 bg-gray-200 dark:bg-gray-800 -translate-y-1/2 z-0"></div>
+
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            
+            <div class="relative z-10 flex flex-col items-center bg-white dark:bg-[#111] p-6 rounded-xl border border-gray-100 dark:border-gray-800 shadow-sm text-center">
+              <div class="w-12 h-12 bg-brand-primary text-white rounded-full flex items-center justify-center font-bold text-lg mb-4">1</div>
+              <h4 class="font-bold text-brand-dark dark:text-white uppercase tracking-wider mb-2">Reserve</h4>
+              <p class="text-xs text-gray-500 dark:text-gray-400 font-light">Book your gear online. We secure your inventory for your exact event date.</p>
+            </div>
+
+            <div class="relative z-10 flex flex-col items-center bg-white dark:bg-[#111] p-6 rounded-xl border border-gray-100 dark:border-gray-800 shadow-sm text-center">
+              <div class="w-12 h-12 bg-brand-primary text-white rounded-full flex items-center justify-center font-bold text-lg mb-4">2</div>
+              <h4 class="font-bold text-brand-dark dark:text-white uppercase tracking-wider mb-2">Receive</h4>
+              <p class="text-xs text-gray-500 dark:text-gray-400 font-light">The bins arrive via FedEx/UPS exactly 2 days before your event to ensure everything is perfect.</p>
+            </div>
+
+            <div class="relative z-10 flex flex-col items-center bg-white dark:bg-[#111] p-6 rounded-xl border border-brand-primary shadow-[0_0_20px_rgba(147,51,234,0.1)] text-center transform md:-translate-y-4">
+              <div class="w-12 h-12 bg-brand-primary text-white rounded-full flex items-center justify-center font-bold text-lg mb-4"><i class="fas fa-music"></i></div>
+              <h4 class="font-bold text-brand-dark dark:text-white uppercase tracking-wider mb-2">Party</h4>
+              <p class="text-xs text-gray-500 dark:text-gray-400 font-light">Plug it in, switch it on, and enjoy an incredible night of noise-free music.</p>
+            </div>
+
+            <div class="relative z-10 flex flex-col items-center bg-white dark:bg-[#111] p-6 rounded-xl border border-gray-100 dark:border-gray-800 shadow-sm text-center">
+              <div class="w-12 h-12 bg-brand-dark text-white rounded-full flex items-center justify-center font-bold text-lg mb-4"><i class="fas fa-box"></i></div>
+              <h4 class="font-bold text-brand-dark dark:text-white uppercase tracking-wider mb-2">Return</h4>
+              <p class="text-xs text-gray-500 dark:text-gray-400 font-light">Pack it up, slap on the prepaid label, and drop it at any shipping center the next business day.</p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="cta-booking" class="py-24 bg-brand-primary transition-colors duration-300">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+        
+        <i class="fas fa-calendar-check text-5xl mb-6 opacity-90"></i>
+        
+        <h2 class="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-6 uppercase">
+          Secure Your <span class="text-brand-dark">Date.</span>
+        </h2>
+        
+        <p class="text-lg md:text-xl font-light mb-10 max-w-2xl mx-auto text-white/90">
+          Our equipment gets booked out weeks in advance, especially during the summer and fall festival seasons. Check availability today and lock in your gear risk-free.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row justify-center gap-6">
+          <a href="contact.html" class="inline-flex items-center justify-center px-10 py-5 bg-brand-dark hover:bg-[#111] text-white font-bold uppercase tracking-widest text-sm transition-all duration-300 shadow-2xl rounded">
+            Check Availability Now
+          </a>
+          <a href="contact.html" class="inline-flex items-center justify-center px-10 py-5 bg-transparent border-2 border-brand-dark text-brand-dark hover:bg-brand-dark hover:text-white font-bold uppercase tracking-widest text-sm transition-all duration-300 rounded">
+            Contact Sales Team
+          </a>
+        </div>
+        
+        <p class="mt-8 text-sm text-brand-dark font-semibold tracking-wider">
+          <i class="fas fa-shield-alt mr-2"></i> No deposit required to check availability.
+        </p>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-[#0a0a0a] text-white pt-24 pb-12 mt-auto border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        
+        <div>
+          <h3 class="text-3xl font-black tracking-tight uppercase mb-6">Rental<span class="text-brand-primary">Disco.</span></h3>
+          <p class="text-gray-400 mb-8 font-normal leading-relaxed text-base">
+            Empowering you to host the ultimate event with premium silent disco headphones and long-range audio gear.
+          </p>
+          <div class="flex space-x-4">
+            <a href="#" class="w-12 h-12 border border-white/20 hover:border-brand-primary hover:text-brand-primary flex items-center justify-center transition-all duration-300 rounded-sm">
+              <i class="fab fa-facebook-f text-base"></i>
+            </a>
+            <a href="#" class="w-12 h-12 border border-white/20 hover:border-brand-primary hover:text-brand-primary flex items-center justify-center transition-all duration-300 rounded-sm">
+              <i class="fab fa-instagram text-base"></i>
+            </a>
+            <a href="#" class="w-12 h-12 border border-white/20 hover:border-brand-primary hover:text-brand-primary flex items-center justify-center transition-all duration-300 rounded-sm">
+              <i class="fab fa-twitter text-base"></i>
+            </a>
+            <a href="#" class="w-12 h-12 border border-white/20 hover:border-brand-primary hover:text-brand-primary flex items-center justify-center transition-all duration-300 rounded-sm">
+              <i class="fab fa-linkedin-in text-base"></i>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-sm uppercase tracking-[0.2em] font-bold mb-8 text-white">Quick Links</h4>
+          <ul class="space-y-5">
+            <li><a href="index.html" class="text-base text-gray-400 hover:text-brand-primary transition-colors duration-300">Home</a></li>
+            <li><a href="about.html" class="text-base text-gray-400 hover:text-brand-primary transition-colors duration-300">About Us</a></li>
+            <li><a href="equipment.html" class="text-base text-gray-400 hover:text-brand-primary transition-colors duration-300">Our Equipment</a></li>
+            <li><a href="blog.html" class="text-base text-gray-400 hover:text-brand-primary transition-colors duration-300">Party Blog</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-sm uppercase tracking-[0.2em] font-bold mb-8 text-white">Event Types</h4>
+          <ul class="space-y-5">
+            <li><a href="services.html" class="text-base text-gray-400 hover:text-brand-primary transition-colors duration-300">House Parties</a></li>
+            <li><a href="services.html" class="text-base text-gray-400 hover:text-brand-primary transition-colors duration-300">Weddings</a></li>
+            <li><a href="services.html" class="text-base text-gray-400 hover:text-brand-primary transition-colors duration-300">Corporate Events</a></li>
+            <li><a href="services.html" class="text-base text-gray-400 hover:text-brand-primary transition-colors duration-300">Festivals</a></li>
+            <li><a href="services.html" class="text-base text-gray-400 hover:text-brand-primary transition-colors duration-300">Fitness Classes</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-sm uppercase tracking-[0.2em] font-bold mb-8 text-white">Contact Us</h4>
+          <ul class="space-y-6">
+            <li class="flex items-start">
+              <i class="fas fa-map-marker-alt text-brand-primary mt-1 mr-4 text-base"></i>
+              <span class="text-base text-gray-400 font-normal">123 Party Street, Salem, Tamil Nadu, India</span>
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-phone text-brand-primary mr-4 text-base"></i>
+              <a href="tel:+919876543210" class="text-base text-gray-400 hover:text-brand-primary transition-colors font-normal">+91 98765 43210</a>
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-envelope text-brand-primary mr-4 text-base"></i>
+              <a href="mailto:info@rentaldisco.com" class="text-base text-gray-400 hover:text-brand-primary transition-colors font-normal">info@rentaldisco.com</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <p class="text-gray-500 text-sm tracking-wider uppercase mb-4 md:mb-0 font-medium">
+          © 2026 Rental Disco. All rights reserved.
+        </p>
+        <div class="flex space-x-6">
+          <a href="login.html" class="text-gray-400 hover:text-brand-primary text-sm tracking-wider uppercase font-medium transition-colors duration-300">Client Login</a>
+          <a href="#" class="text-gray-400 hover:text-brand-primary text-sm tracking-wider uppercase font-medium transition-colors duration-300">Privacy</a>
+          <a href="#" class="text-gray-400 hover:text-brand-primary text-sm tracking-wider uppercase font-medium transition-colors duration-300">Terms</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    // Theme Toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
+    const html = document.documentElement;
+
+    function toggleTheme() {
+      if (html.classList.contains('dark')) {
+        html.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+      } else {
+        html.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      }
+    }
+
+    if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
+    if (mobileThemeToggle) mobileThemeToggle.addEventListener('click', toggleTheme);
+    if (localStorage.getItem('theme') === 'dark') html.classList.add('dark');
+
+    // RTL Toggle
+    const rtlToggle = document.getElementById('rtl-toggle');
+    const mobileRtlToggle = document.getElementById('mobile-rtl-toggle');
+
+    function toggleRTL() {
+      if (html.getAttribute('dir') === 'rtl') {
+        html.removeAttribute('dir');
+        localStorage.setItem('direction', 'ltr');
+      } else {
+        html.setAttribute('dir', 'rtl');
+        localStorage.setItem('direction', 'rtl');
+      }
+    }
+
+    if (rtlToggle) rtlToggle.addEventListener('click', toggleRTL);
+    if (mobileRtlToggle) mobileRtlToggle.addEventListener('click', toggleRTL);
+    if (localStorage.getItem('direction') === 'rtl') html.setAttribute('dir', 'rtl');
+
+    // Mobile Menu Toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      menuIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+    });
+
+    // Mobile Dropdowns Toggle Function
+    function setupMobileDropdown(dropdownId, menuId, iconId) {
+      const dropdown = document.getElementById(dropdownId);
+      const menu = document.getElementById(menuId);
+      const icon = document.getElementById(iconId);
+      
+      if(dropdown && menu && icon) {
+        dropdown.addEventListener('click', () => {
+          menu.classList.toggle('hidden');
+          if(menu.classList.contains('hidden')) {
+            icon.classList.remove('fa-minus');
+            icon.classList.add('fa-plus');
+          } else {
+            icon.classList.remove('fa-plus');
+            icon.classList.add('fa-minus');
+          }
+        });
+      }
+    }
+
+    // Initialize dropdowns
+    setupMobileDropdown('mobile-home-dropdown', 'mobile-home-menu', 'mobile-home-icon');
+    setupMobileDropdown('mobile-dashboard-dropdown', 'mobile-dashboard-menu', 'mobile-dashboard-icon');
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client Dashboard - Rental Disco</title>
+  <link rel="icon" type="image/jpeg" href="images/rentaldisco_logo.jpg">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script>
+    tailwind.config = { 
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'brand-primary': '#9333EA', /* Vibrant Purple */
+            'brand-dark': '#020617',    /* Deep Slate */
+            'brand-light': '#FAF5FF',   /* Soft Purple Tint */
+            white: '#FFFFFF'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    .dark ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; }
+    .dark ::-webkit-scrollbar-thumb { background: #333; }
+    ::-webkit-scrollbar-thumb:hover { background: #9333EA; }
+    
+    /* Smooth transition for sidebar */
+    .sidebar-transition {
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* RTL Support */
+    [dir="rtl"] #sidebar {
+      left: auto;
+      right: 0;
+    }
+
+    [dir="rtl"] #sidebar.sidebar-closed {
+      transform: translateX(100%);
+    }
+
+    [dir="rtl"] .flex-1.lg\:ml-64 {
+      margin-left: 0;
+      margin-right: 16rem;
+    }
+
+    [dir="ltr"] #sidebar.sidebar-closed {
+      transform: translateX(-100%);
+    }
+    
+    /* Section transitions */
+    .content-section {
+      animation: fadeIn 0.3s ease-in-out;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body class="font-sans antialiased bg-gray-50 dark:bg-[#0a0a0a] text-gray-900 dark:text-gray-100 transition-colors duration-300">
+
+  <div class="flex h-screen overflow-hidden">
+
+    <div id="sidebar-overlay" class="fixed inset-0 bg-black/50 z-40 hidden lg:hidden backdrop-blur-sm transition-opacity opacity-0"></div>
+
+    <aside id="sidebar" class="fixed inset-y-0 left-0 z-50 w-64 bg-brand-dark dark:bg-[#111111] border-r border-gray-200 dark:border-white/10 text-white sidebar-closed lg:!translate-x-0 sidebar-transition flex flex-col">
+      
+      <div class="h-[90px] flex items-center justify-center border-b border-gray-800 dark:border-white/10 px-6 shrink-0">
+        <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+          <div class="flex flex-col">
+            <span class="text-2xl font-black tracking-tight text-white uppercase">Rental<span class="text-brand-primary">Disco.</span></span>
+          </div>
+        </a>
+      </div>
+
+      <nav class="flex-1 overflow-y-auto py-8 space-y-2 scrollbar-thin">
+        
+        <p class="px-8 text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em] mb-4">Event Planning</p>
+        
+        <a href="#" data-target="section-overview" class="sidebar-link flex items-center space-x-4 rtl:space-x-reverse px-8 py-3 bg-white/5 border-l-2 border-brand-primary text-brand-primary transition-all duration-300 group">
+          <i class="fas fa-home w-5 text-center"></i>
+          <span class="text-xs uppercase tracking-widest font-bold">Event Hub</span>
+        </a>
+
+        <a href="#" data-target="section-bookings" class="sidebar-link flex items-center space-x-4 rtl:space-x-reverse px-8 py-3 text-gray-400 border-l-2 border-transparent hover:border-brand-primary hover:text-brand-primary hover:bg-white/5 transition-all duration-300 group">
+          <i class="fas fa-calendar-alt w-5 text-center transition-colors"></i>
+          <span class="text-xs uppercase tracking-widest font-bold">My Bookings</span>
+        </a>
+
+        <a href="#" data-target="section-logistics" class="sidebar-link flex items-center space-x-4 rtl:space-x-reverse px-8 py-3 text-gray-400 border-l-2 border-transparent hover:border-brand-primary hover:text-brand-primary hover:bg-white/5 transition-all duration-300 group">
+          <i class="fas fa-truck-fast w-5 text-center transition-colors"></i>
+          <span class="text-xs uppercase tracking-widest font-bold">Track Delivery</span>
+        </a>
+
+        <p class="px-8 text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em] mt-10 mb-4">Resources</p>
+
+        <a href="#" data-target="section-guides" class="sidebar-link flex items-center space-x-4 rtl:space-x-reverse px-8 py-3 text-gray-400 border-l-2 border-transparent hover:border-brand-primary hover:text-brand-primary hover:bg-white/5 transition-all duration-300 group">
+          <i class="fas fa-sliders-h w-5 text-center transition-colors"></i>
+          <span class="text-xs uppercase tracking-widest font-bold">Setup Guides</span>
+        </a>
+
+        <a href="#" data-target="section-billing" class="sidebar-link flex items-center space-x-4 rtl:space-x-reverse px-8 py-3 text-gray-400 border-l-2 border-transparent hover:border-brand-primary hover:text-brand-primary hover:bg-white/5 transition-all duration-300 group">
+          <i class="fas fa-file-invoice-dollar w-5 text-center transition-colors"></i>
+          <span class="text-xs uppercase tracking-widest font-bold">Invoices</span>
+          <span class="ltr:ml-auto rtl:mr-auto bg-brand-primary text-white text-[10px] font-bold px-2 py-0.5 rounded">1</span>
+        </a>
+
+        <a href="#" data-target="section-support" class="sidebar-link flex items-center space-x-4 rtl:space-x-reverse px-8 py-3 text-gray-400 border-l-2 border-transparent hover:border-brand-primary hover:text-brand-primary hover:bg-white/5 transition-all duration-300 group">
+          <i class="fas fa-headset w-5 text-center transition-colors"></i>
+          <span class="text-xs uppercase tracking-widest font-bold">Support</span>
+        </a>
+      </nav>
+
+      <div class="p-6 border-t border-gray-800 dark:border-white/10 bg-brand-dark dark:bg-[#111]">
+        <div class="flex items-center space-x-4 rtl:space-x-reverse group cursor-pointer">
+          <div class="w-10 h-10 rounded-full bg-brand-primary flex items-center justify-center text-white font-bold uppercase shadow-[0_0_10px_rgba(147,51,234,0.5)]">
+            DC
+          </div>
+          <div class="overflow-hidden">
+            <p class="text-xs uppercase tracking-wider font-bold text-white truncate">David Chen</p>
+            <p class="text-[10px] uppercase tracking-widest text-gray-400 truncate">Apex Events</p>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <div class="flex-1 flex flex-col lg:ml-64 min-w-0 transition-all duration-300 bg-gray-50 dark:bg-[#0a0a0a]">
+      
+      <header class="h-[90px] bg-white dark:bg-[#111111] border-b border-gray-200 dark:border-white/10 flex items-center justify-between px-4 md:px-8 z-30 sticky top-0 transition-colors duration-300 shadow-sm">
+        
+        <div class="flex items-center gap-4">
+          <button id="sidebar-toggle" class="lg:hidden p-2 ltr:-ml-2 rtl:-mr-2 text-gray-900 dark:text-white transition-colors focus:outline-none">
+            <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+          <h2 class="text-sm md:text-base font-black tracking-widest uppercase text-gray-900 dark:text-white truncate hidden sm:block">Client Coordination Hub</h2>
+        </div>
+
+        <div class="flex items-center gap-4">
+          
+          <button id="rtl-toggle" class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-brand-primary transition-colors duration-300" title="Toggle RTL/LTR">
+            <span id="rtl-text">RTL</span>
+          </button>
+
+          <button id="theme-toggle" class="w-10 h-10 flex items-center justify-center text-gray-400 hover:text-brand-primary dark:hover:text-brand-primary transition-colors duration-300" title="Toggle Theme">
+            <i class="fas fa-moon dark:hidden text-lg"></i>
+            <i class="fas fa-sun hidden dark:inline text-lg"></i>
+          </button>
+
+          <div class="h-8 w-px bg-gray-200 dark:bg-gray-800 mx-2 hidden sm:block"></div>
+
+          <a href="login.html" class="bg-brand-dark dark:bg-white text-white dark:text-brand-dark hover:bg-brand-primary dark:hover:bg-brand-primary dark:hover:text-white px-6 py-3 text-xs uppercase tracking-wider font-bold transition-all duration-300 flex items-center space-x-2 ltr:ml-2 rtl:mr-2 rounded">
+            <span class="hidden sm:inline">Logout</span>
+            <i class="fas fa-arrow-right text-[10px]"></i>
+          </a>
+
+        </div>
+      </header>
+
+      <main class="flex-1 overflow-y-auto p-4 md:p-8 scroll-smooth">
+        
+        <div id="section-overview" class="content-section block">
+          <div class="bg-white dark:bg-[#111111] border border-gray-200 dark:border-white/10 p-6 md:p-8 mb-8 relative group shadow-sm rounded-xl">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+              <div>
+                <p class="text-[10px] text-brand-primary font-bold uppercase tracking-widest mb-2"><i class="fas fa-bolt mr-1"></i> Active Booking</p>
+                <h3 class="text-2xl md:text-3xl font-black text-gray-900 dark:text-white uppercase tracking-tight">Summer Beats Festival</h3>
+                <p class="text-xs text-gray-500 mt-2 font-light"><i class="far fa-calendar mr-1"></i> Event Date: October 28, 2026</p>
+              </div>
+              <div class="border border-gray-200 dark:border-white/10 px-6 py-3 text-center rounded-lg bg-gray-50 dark:bg-[#1a1a1a]">
+                <span class="block text-[10px] uppercase tracking-widest text-gray-500 dark:text-gray-400 font-bold mb-1">Status</span>
+                <span class="block text-xl font-black text-blue-500">In Transit</span>
+              </div>
+            </div>
+
+            <div class="relative">
+              <div class="w-full h-2 bg-gray-200 dark:bg-gray-800 mb-4 rounded-full overflow-hidden">
+                <div class="h-full bg-gradient-to-r from-brand-primary to-blue-500 transition-all duration-1000 relative" style="width: 50%">
+                  <div class="absolute right-0 top-0 bottom-0 w-4 bg-white/30 animate-pulse"></div>
+                </div>
+              </div>
+              <div class="flex justify-between text-[10px] uppercase tracking-widest font-bold text-gray-400">
+                <span class="text-brand-primary">Reserved</span>
+                <span class="text-brand-primary text-center hidden sm:block">Processing</span>
+                <span class="text-blue-500 text-center">Shipped</span>
+                <span class="text-right hidden sm:block">Delivered</span>
+                <span class="text-right">Returned</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            <div class="bg-white dark:bg-[#111111] p-6 border border-gray-200 dark:border-white/10 rounded-xl relative group hover:border-brand-primary transition-colors shadow-sm">
+              <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-t-xl"></div>
+              <p class="text-[10px] text-gray-500 dark:text-gray-400 font-bold uppercase tracking-widest mb-2"><i class="fas fa-headphones mr-1 text-brand-primary"></i> Headsets Booked</p>
+              <h3 class="text-3xl font-black text-gray-900 dark:text-white">500</h3>
+              <div class="mt-4 flex items-center text-[10px] font-bold tracking-wider uppercase">
+                <span class="text-gray-400">Model: <span class="text-gray-900 dark:text-white">Pro LED Series</span></span>
+              </div>
+            </div>
+
+            <div class="bg-white dark:bg-[#111111] p-6 border border-gray-200 dark:border-white/10 rounded-xl relative group hover:border-blue-500 transition-colors shadow-sm">
+              <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-t-xl"></div>
+              <p class="text-[10px] text-gray-500 dark:text-gray-400 font-bold uppercase tracking-widest mb-2"><i class="fas fa-broadcast-tower mr-1 text-blue-500"></i> Active Channels</p>
+              <h3 class="text-3xl font-black text-gray-900 dark:text-white">3</h3>
+              <div class="mt-4 flex items-center text-[10px] font-bold tracking-wider uppercase">
+                <span class="text-gray-400">3x Long-Range Transmitters</span>
+              </div>
+            </div>
+
+            <div class="bg-white dark:bg-[#111111] p-6 border border-gray-200 dark:border-white/10 rounded-xl relative group hover:border-green-500 transition-colors shadow-sm">
+              <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-green-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-t-xl"></div>
+              <p class="text-[10px] text-gray-500 dark:text-gray-400 font-bold uppercase tracking-widest mb-2"><i class="fas fa-box mr-1 text-green-500"></i> Transport Bins</p>
+              <h3 class="text-3xl font-black text-gray-900 dark:text-white">10</h3>
+              <div class="mt-4 flex items-center text-[10px] font-bold tracking-wider uppercase">
+                <span class="text-green-500">Return Labels Included</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="section-bookings" class="content-section hidden">
+          <div class="bg-white dark:bg-[#111111] border border-gray-200 dark:border-white/10 overflow-hidden mb-8 rounded-xl shadow-sm">
+            <div class="p-6 border-b border-gray-200 dark:border-white/10 flex items-center justify-between">
+              <h3 class="text-xs font-bold uppercase tracking-widest text-gray-900 dark:text-white">Booking History</h3>
+              <button class="bg-brand-primary text-white px-4 py-2 rounded text-[10px] font-bold uppercase tracking-widest hover:bg-[#7e22ce] transition-colors"><i class="fas fa-plus mr-1"></i> New Booking</button>
+            </div>
+            <div class="p-6 text-center py-16">
+               <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gray-100 dark:bg-gray-800 mb-4">
+                 <i class="far fa-calendar-check text-2xl text-gray-400"></i>
+               </div>
+               <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Summer Beats Festival</h4>
+               <p class="text-sm text-gray-500 dark:text-gray-400 max-w-md mx-auto mb-6">This is your only active booking. Past events will appear here once they are completed.</p>
+            </div>
+          </div>
+        </div>
+
+        <div id="section-logistics" class="content-section hidden">
+          <div class="grid grid-cols-1 xl:grid-cols-2 gap-6 mb-8">
+            <div class="bg-white dark:bg-[#111111] p-6 border border-gray-200 dark:border-white/10 rounded-xl shadow-sm">
+              <h3 class="text-xs font-bold uppercase tracking-widest text-gray-900 dark:text-white mb-6">Planned Channel Utilization</h3>
+              <div class="relative h-64 w-full flex justify-center">
+                <canvas id="channelChart"></canvas>
+              </div>
+            </div>
+
+            <div class="bg-white dark:bg-[#111111] p-6 border border-gray-200 dark:border-white/10 rounded-xl shadow-sm flex flex-col">
+              <h3 class="text-xs font-bold uppercase tracking-widest text-gray-900 dark:text-white mb-6">Logistics & Event Updates</h3>
+              
+              <div class="flex-1 overflow-y-auto ltr:pr-2 rtl:pl-2 space-y-6">
+                <div class="flex gap-4 rtl:flex-row-reverse group">
+                  <div class="flex flex-col items-center">
+                    <div class="w-8 h-8 border border-gray-200 dark:border-gray-700 rounded-full flex items-center justify-center text-gray-900 dark:text-white group-hover:border-brand-primary group-hover:text-brand-primary transition-colors z-10 bg-white dark:bg-[#111]">
+                      <i class="fas fa-truck text-xs"></i>
+                    </div>
+                    <div class="h-full w-px bg-gray-200 dark:bg-gray-800 -mb-6 mt-2"></div>
+                  </div>
+                  <div class="pb-6">
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-brand-primary">Today, 9:00 AM</span>
+                    <p class="font-bold text-sm text-gray-900 dark:text-white uppercase tracking-wider mt-1">FedEx Tracking Updated</p>
+                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-2 leading-relaxed">Your 10 transport bins have been picked up by FedEx and are in transit to the venue address.</p>
+                    <button class="mt-3 text-[10px] font-bold uppercase tracking-widest border border-gray-300 dark:border-gray-700 px-4 py-2 hover:border-brand-primary hover:text-brand-primary transition-colors text-gray-900 dark:text-white rounded">Track Package</button>
+                  </div>
+                </div>
+
+                <div class="flex gap-4 rtl:flex-row-reverse group">
+                  <div class="flex flex-col items-center">
+                    <div class="w-8 h-8 border border-gray-200 dark:border-gray-700 rounded-full flex items-center justify-center text-gray-900 dark:text-white group-hover:border-brand-primary group-hover:text-brand-primary transition-colors z-10 bg-white dark:bg-[#111]">
+                      <i class="fas fa-spray-can text-xs"></i>
+                    </div>
+                    <div class="h-full w-px bg-gray-200 dark:bg-gray-800 -mb-6 mt-2"></div>
+                  </div>
+                  <div class="pb-6">
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-gray-500">Yesterday, 4:30 PM</span>
+                    <p class="font-bold text-sm text-gray-900 dark:text-white uppercase tracking-wider mt-1">Sanitation & QA Passed</p>
+                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-2 leading-relaxed">All 500 headsets have passed our UV-C cleaning protocol and battery checks.</p>
+                  </div>
+                </div>
+
+                <div class="flex gap-4 rtl:flex-row-reverse group">
+                  <div class="flex flex-col items-center">
+                    <div class="w-8 h-8 border border-gray-200 dark:border-gray-700 rounded-full flex items-center justify-center text-gray-900 dark:text-white group-hover:border-brand-primary group-hover:text-brand-primary transition-colors z-10 bg-white dark:bg-[#111]">
+                      <i class="fas fa-file-contract text-xs"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-gray-500">Oct 15, 2026</span>
+                    <p class="font-bold text-sm text-gray-900 dark:text-white uppercase tracking-wider mt-1">Rental Agreement Signed</p>
+                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-2 leading-relaxed">Booking confirmed for Summer Beats Festival.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="section-guides" class="content-section hidden">
+           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+             <div class="bg-brand-dark p-8 border border-brand-primary/30 rounded-xl relative group shadow-[0_0_15px_rgba(147,51,234,0.15)] flex flex-col justify-center items-center text-center cursor-pointer hover:bg-[#0a0a0a] transition-colors">
+                <i class="fas fa-file-pdf text-4xl text-brand-primary mb-4"></i>
+                <h3 class="text-base font-black text-white uppercase tracking-widest">Master Setup Guide</h3>
+                <p class="text-xs text-gray-400 mt-2 mb-4">Complete PDF manual for transmitters and headsets.</p>
+                <div class="mt-auto flex items-center text-[10px] font-bold tracking-wider uppercase">
+                  <span class="text-white bg-brand-primary px-4 py-2 rounded">Download PDF <i class="fas fa-download ml-1"></i></span>
+                </div>
+              </div>
+
+              <div class="bg-white dark:bg-[#111111] p-8 border border-gray-200 dark:border-white/10 rounded-xl relative group hover:border-blue-500 transition-colors shadow-sm flex flex-col justify-center items-center text-center cursor-pointer">
+                <i class="fas fa-video text-4xl text-blue-500 mb-4"></i>
+                <h3 class="text-base font-black text-gray-900 dark:text-white uppercase tracking-widest">Video Tutorial</h3>
+                <p class="text-xs text-gray-500 mt-2 mb-4">Watch our 2-minute quick-start video guide.</p>
+                <div class="mt-auto flex items-center text-[10px] font-bold tracking-wider uppercase">
+                  <span class="text-blue-500 border border-blue-500 px-4 py-2 rounded hover:bg-blue-50 dark:hover:bg-blue-900/20">Watch Now <i class="fas fa-play ml-1"></i></span>
+                </div>
+              </div>
+           </div>
+        </div>
+
+        <div id="section-billing" class="content-section hidden">
+          <div class="bg-white dark:bg-[#111111] border border-gray-200 dark:border-white/10 overflow-hidden mb-8 rounded-xl shadow-sm">
+            <div class="p-6 border-b border-gray-200 dark:border-white/10 flex items-center justify-between">
+              <h3 class="text-xs font-bold uppercase tracking-widest text-gray-900 dark:text-white">Billing & Invoices</h3>
+              <button class="text-[10px] font-bold uppercase tracking-widest text-brand-primary hover:text-gray-900 dark:hover:text-white transition-colors">View All History</button>
+            </div>
+            
+            <div class="overflow-x-auto">
+              <table class="w-full text-left rtl:text-right whitespace-nowrap">
+                <thead>
+                  <tr class="bg-gray-50 dark:bg-black/50 text-gray-500 dark:text-gray-400 text-[10px] uppercase tracking-widest border-b border-gray-200 dark:border-white/10">
+                    <th class="px-6 py-4 font-bold">Invoice ID</th>
+                    <th class="px-6 py-4 font-bold">Event Description</th>
+                    <th class="px-6 py-4 font-bold">Date Issued</th>
+                    <th class="px-6 py-4 font-bold">Amount</th>
+                    <th class="px-6 py-4 font-bold">Status</th>
+                    <th class="px-6 py-4 font-bold ltr:text-right rtl:text-left">Action</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-100 dark:divide-white/5 text-sm">
+                  <tr class="hover:bg-gray-50 dark:hover:bg-white/5 transition-colors group">
+                    <td class="px-6 py-5 text-gray-900 dark:text-white font-mono text-xs">#INV-8842</td>
+                    <td class="px-6 py-5 text-gray-500 dark:text-gray-400 text-xs tracking-wider">Summer Beats - 50% Deposit</td>
+                    <td class="px-6 py-5 text-gray-500 dark:text-gray-400 text-xs tracking-wider">OCT 10, 2026</td>
+                    <td class="px-6 py-5 font-bold text-gray-900 dark:text-white">$1,250.00</td>
+                    <td class="px-6 py-5">
+                      <span class="text-[10px] font-bold uppercase tracking-widest text-green-600 dark:text-green-400 bg-green-100 dark:bg-green-900/30 px-2 py-1 rounded">Paid</span>
+                    </td>
+                    <td class="px-6 py-5 ltr:text-right rtl:text-left">
+                      <button class="text-gray-400 hover:text-brand-primary transition-colors text-xs uppercase tracking-widest font-bold">Receipt <i class="fas fa-download ml-1"></i></button>
+                    </td>
+                  </tr>
+                  <tr class="hover:bg-gray-50 dark:hover:bg-white/5 transition-colors group">
+                    <td class="px-6 py-5 text-gray-900 dark:text-white font-mono text-xs">#INV-8843</td>
+                    <td class="px-6 py-5 text-gray-500 dark:text-gray-400 text-xs tracking-wider">Custom Headphone Branding</td>
+                    <td class="px-6 py-5 text-gray-500 dark:text-gray-400 text-xs tracking-wider">OCT 12, 2026</td>
+                    <td class="px-6 py-5 font-bold text-gray-900 dark:text-white">$300.00</td>
+                    <td class="px-6 py-5">
+                      <span class="text-[10px] font-bold uppercase tracking-widest text-green-600 dark:text-green-400 bg-green-100 dark:bg-green-900/30 px-2 py-1 rounded">Paid</span>
+                    </td>
+                    <td class="px-6 py-5 ltr:text-right rtl:text-left">
+                      <button class="text-gray-400 hover:text-brand-primary transition-colors text-xs uppercase tracking-widest font-bold">Receipt <i class="fas fa-download ml-1"></i></button>
+                    </td>
+                  </tr>
+                  <tr class="hover:bg-gray-50 dark:hover:bg-white/5 transition-colors group">
+                    <td class="px-6 py-5 text-gray-900 dark:text-white font-mono text-xs">#INV-8899</td>
+                    <td class="px-6 py-5 text-gray-500 dark:text-gray-400 text-xs tracking-wider">Summer Beats - Final Balance</td>
+                    <td class="px-6 py-5 text-gray-500 dark:text-gray-400 text-xs tracking-wider">OCT 26, 2026</td>
+                    <td class="px-6 py-5 font-bold text-gray-900 dark:text-white">$1,250.00</td>
+                    <td class="px-6 py-5">
+                      <span class="text-[10px] font-bold uppercase tracking-widest text-orange-500 dark:text-orange-400 bg-orange-100 dark:bg-orange-900/30 px-2 py-1 rounded">Due Soon</span>
+                    </td>
+                    <td class="px-6 py-5 ltr:text-right rtl:text-left">
+                      <button class="bg-brand-primary text-white px-3 py-1.5 rounded hover:bg-[#7e22ce] transition-colors text-xs uppercase tracking-widest font-bold">Pay Now <i class="fas fa-arrow-right ml-1"></i></button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div id="section-support" class="content-section hidden">
+           <div class="bg-white dark:bg-[#111111] p-6 md:p-8 border border-gray-200 dark:border-white/10 rounded-xl shadow-sm max-w-3xl">
+              <h3 class="text-xl font-black text-gray-900 dark:text-white uppercase tracking-widest mb-6">How can we help?</h3>
+              
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div class="border border-gray-200 dark:border-gray-800 rounded-lg p-6 flex flex-col items-center text-center">
+                  <i class="fas fa-phone text-3xl text-brand-primary mb-4"></i>
+                  <h4 class="font-bold text-gray-900 dark:text-white uppercase tracking-wider text-sm mb-2">Call the Hotline</h4>
+                  <p class="text-xs text-gray-500 dark:text-gray-400 mb-4">Available 24/7 during active events.</p>
+                  <a href="tel:1-800-555-0199" class="text-brand-primary font-bold tracking-widest text-sm hover:underline">1-800-555-0199</a>
+                </div>
+                <div class="border border-gray-200 dark:border-gray-800 rounded-lg p-6 flex flex-col items-center text-center">
+                  <i class="fas fa-envelope text-3xl text-brand-primary mb-4"></i>
+                  <h4 class="font-bold text-gray-900 dark:text-white uppercase tracking-wider text-sm mb-2">Email Support</h4>
+                  <p class="text-xs text-gray-500 dark:text-gray-400 mb-4">We aim to respond within 2 hours.</p>
+                  <a href="mailto:help@rentaldisco.com" class="text-brand-primary font-bold tracking-widest text-sm hover:underline">help@rentaldisco.com</a>
+                </div>
+              </div>
+           </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <script>
+    // --- Section Tab Filtering Logic ---
+    const sidebarLinks = document.querySelectorAll('.sidebar-link');
+    const sections = document.querySelectorAll('.content-section');
+
+    sidebarLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('data-target');
+
+        // Update active classes on sidebar links
+        sidebarLinks.forEach(btn => {
+          btn.classList.remove('bg-white/5', 'border-brand-primary', 'text-brand-primary');
+          btn.classList.add('border-transparent', 'text-gray-400');
+        });
+        link.classList.remove('border-transparent', 'text-gray-400');
+        link.classList.add('bg-white/5', 'border-brand-primary', 'text-brand-primary');
+
+        // Hide all sections and show the target section
+        sections.forEach(section => {
+          section.classList.add('hidden');
+          section.classList.remove('block');
+        });
+        
+        const targetSection = document.getElementById(targetId);
+        if(targetSection) {
+          targetSection.classList.remove('hidden');
+          targetSection.classList.add('block');
+          
+          // Re-render chart if logistics section is opened to avoid display issues
+          if(targetId === 'section-logistics' && typeof channelChart !== 'undefined') {
+            setTimeout(() => channelChart.resize(), 10);
+          }
+        }
+
+        // Close sidebar automatically on mobile screens
+        if (window.innerWidth < 1024) {
+          toggleSidebar();
+        }
+      });
+    });
+
+    // --- RTL/LTR Toggle Logic ---
+    const rtlToggle = document.getElementById('rtl-toggle');
+    const rtlText = document.getElementById('rtl-text');
+    const html = document.documentElement;
+    const mainContent = document.querySelector('.flex-1.lg\\:ml-64');
+
+    if (localStorage.getItem('direction') === 'rtl') {
+      html.setAttribute('dir', 'rtl');
+      rtlText.textContent = 'LTR';
+      if (mainContent) {
+        mainContent.classList.remove('lg:ml-64');
+        mainContent.classList.add('lg:mr-64');
+      }
+    } else {
+      html.setAttribute('dir', 'ltr');
+      rtlText.textContent = 'RTL';
+    }
+
+    rtlToggle.addEventListener('click', () => {
+      const currentDir = html.getAttribute('dir');
+      
+      if (currentDir === 'ltr') {
+        html.setAttribute('dir', 'rtl');
+        localStorage.setItem('direction', 'rtl');
+        rtlText.textContent = 'LTR';
+        if (mainContent) {
+          mainContent.classList.remove('lg:ml-64');
+          mainContent.classList.add('lg:mr-64');
+        }
+      } else {
+        html.setAttribute('dir', 'ltr');
+        localStorage.setItem('direction', 'ltr');
+        rtlText.textContent = 'RTL';
+        if (mainContent) {
+          mainContent.classList.remove('lg:mr-64');
+          mainContent.classList.add('lg:ml-64');
+        }
+      }
+    });
+
+    // --- Responsive Sidebar Logic ---
+    const sidebar = document.getElementById('sidebar');
+    const sidebarToggle = document.getElementById('sidebar-toggle');
+    const overlay = document.getElementById('sidebar-overlay');
+    
+    function toggleSidebar() {
+      const isClosed = sidebar.classList.contains('sidebar-closed');
+      
+      if (isClosed) {
+        sidebar.classList.remove('sidebar-closed');
+        overlay.classList.remove('hidden');
+        setTimeout(() => overlay.classList.remove('opacity-0'), 10);
+      } else {
+        sidebar.classList.add('sidebar-closed');
+        overlay.classList.add('opacity-0');
+        setTimeout(() => overlay.classList.add('hidden'), 300);
+      }
+    }
+
+    sidebarToggle.addEventListener('click', toggleSidebar);
+    overlay.addEventListener('click', toggleSidebar);
+
+    // --- Dark Mode Logic ---
+    const themeToggle = document.getElementById('theme-toggle');
+
+    if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      html.classList.add('dark');
+    } else {
+      html.classList.remove('dark');
+    }
+
+    themeToggle.addEventListener('click', () => {
+      html.classList.toggle('dark');
+      if (html.classList.contains('dark')) {
+        localStorage.setItem('theme', 'dark');
+        updateCharts(true);
+      } else {
+        localStorage.setItem('theme', 'light');
+        updateCharts(false);
+      }
+    });
+
+    // --- Chart.js Configuration for EVENT PLANNER Dashboard ---
+    let channelChart;
+
+    function initCharts() {
+      const isDark = html.classList.contains('dark');
+      const textColor = isDark ? '#9ca3af' : '#4b5563';
+      const canvas = document.getElementById('channelChart');
+      
+      if (!canvas) return; // Prevent errors if chart canvas isn't found
+      
+      const ctx = canvas.getContext('2d');
+      channelChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+          labels: ['Channel 1 (EDM / DJ)', 'Channel 2 (Hip Hop)', 'Channel 3 (Live Mic)'],
+          datasets: [{
+            data: [50, 35, 15],
+            backgroundColor: [
+              '#3b82f6', // Blue LED
+              '#ef4444', // Red LED
+              '#22c55e', // Green LED
+            ],
+            borderWidth: isDark ? 2 : 2,
+            borderColor: isDark ? '#111' : '#fff',
+            hoverOffset: 4
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          cutout: '75%', 
+          plugins: {
+            legend: { 
+              position: 'bottom', 
+              labels: { 
+                color: textColor, 
+                padding: 20, 
+                usePointStyle: true,
+                boxWidth: 8,
+                font: {size: 11, family: 'sans-serif'}
+              } 
+            },
+            tooltip: {
+              backgroundColor: isDark ? '#111' : '#fff',
+              titleColor: isDark ? '#fff' : '#111',
+              bodyColor: isDark ? '#ccc' : '#444',
+              borderColor: isDark ? '#333' : '#e5e7eb',
+              borderWidth: 1,
+              cornerRadius: 4,
+              displayColors: true,
+              callbacks: {
+                label: function(context) {
+                  return ' Est. Listeners: ' + context.parsed + '%';
+                }
+              }
+            }
+          }
+        }
+      });
+    }
+
+    function updateCharts(isDark) {
+      const textColor = isDark ? '#9ca3af' : '#4b5563';
+      
+      if(typeof channelChart !== 'undefined') {
+        channelChart.options.plugins.legend.labels.color = textColor;
+        channelChart.options.plugins.tooltip.backgroundColor = isDark ? '#111' : '#fff';
+        channelChart.options.plugins.tooltip.titleColor = isDark ? '#fff' : '#111';
+        channelChart.options.plugins.tooltip.bodyColor = isDark ? '#ccc' : '#444';
+        channelChart.options.plugins.tooltip.borderColor = isDark ? '#333' : '#e5e7eb';
+        
+        channelChart.data.datasets[0].borderColor = isDark ? '#111' : '#fff';
+          
+        channelChart.update();
+      }
+    }
+
+    window.addEventListener('load', initCharts);
+    
+    window.addEventListener('resize', () => {
+       if (window.innerWidth >= 1024) {
+         sidebar.classList.remove('sidebar-closed');
+         overlay.classList.add('hidden', 'opacity-0');
+       }
+    });
+
+  </script>
+</body>
+</html>
