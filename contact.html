@@ -1,73 +1,49 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Register - Rental Disco</title>
+  <title>Contact Us - Rental Disco</title>
   <link rel="icon" type="image/jpeg" href="images/rentaldisco_logo.jpg">
+  <meta name="description" content="Get in touch with Rental Disco to book premium silent disco headphones for your next event.">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <script>
-    tailwind.config = {
+    tailwind.config = { 
       darkMode: 'class',
       theme: {
         extend: {
           colors: {
-            'brand-primary': '#9333EA', /* Vibrant Purple */
-            'brand-dark': '#020617',    /* Deep Slate */
-            'brand-light': '#FAF5FF',   /* Soft Purple Tint */
+            'brand-primary': '#9333EA', /* Beautiful vibrant Purple */
+            'brand-dark': '#020617', /* Deep sleek Slate/Black */
+            'brand-light': '#FAF5FF', /* Soft elegant tint */
             white: '#FFFFFF'
           }
         }
       }
     }
   </script>
-  
+
   <style>
+    [dir="rtl"] { direction: rtl; }
+    
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
     }
-    .animate-fade-in {
-      animation: fadeInUp 0.8s ease-out;
-    }
-    
-    /* Custom Styling for the select element to match the vibe */
-    select {
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23999' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 0.75rem center;
-      background-size: 1rem;
-    }
-    [dir="rtl"] select {
-      background-position: left 0.75rem center;
-    }
+    .animate-fade-in { animation: fadeInUp 0.8s ease-out; }
 
-    /* RTL Support */
-    [dir="rtl"] .animated-circle-left {
-      left: auto;
-      right: 2.5rem;
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
     }
-
-    [dir="rtl"] .animated-circle-right {
-      right: auto;
-      left: 2.5rem;
-    }
-
-    /* Ensure no horizontal scroll */
-    html, body {
-      overflow-x: hidden;
-      width: 100%;
-    }
+    .animate-float { animation: float 3s ease-in-out infinite; }
   </style>
 </head>
-<body class="font-sans antialiased bg-white dark:bg-[#0a0a0a] h-screen overflow-x-hidden flex flex-col transition-colors duration-300">
+<body class="font-sans antialiased transition-colors duration-300 bg-white dark:bg-[#0a0a0a] flex flex-col min-h-screen">
 
-  <nav class="bg-white dark:bg-[#111111] fixed w-full top-0 z-50 border-b border-gray-200 dark:border-white/10 transition-colors duration-300">
+  <nav class="bg-white dark:bg-brand-dark fixed w-full top-0 z-50 border-b border-gray-200 dark:border-white/10 transition-colors duration-300">
     <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-[90px]">
 
@@ -79,10 +55,81 @@
           </a>
         </div>
 
-        <div class="flex items-center space-x-4">
-          <button id="rtl-toggle" class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-brand-primary transition-colors duration-300" title="Toggle RTL">
-            RTL
+        <div class="hidden xl:flex items-center justify-center flex-1 mx-8">
+          <div class="flex items-center space-x-8">
+
+            <div class="relative group h-[90px] flex items-center">
+              <button class="text-xs uppercase tracking-[0.15em] font-semibold text-gray-900 dark:text-gray-100 hover:text-brand-primary transition-colors flex items-center relative py-2">
+                <span>Home</span>
+                <i class="fas fa-chevron-down text-[10px] ml-2 transition-transform duration-300 group-hover:rotate-180"></i>
+                <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-brand-primary transition-all duration-300 group-hover:w-full"></span>
+              </button>
+              
+              <div class="absolute top-[90px] left-0 w-56 bg-white dark:bg-[#111] border border-t-0 border-gray-200 dark:border-white/10 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0 z-50">
+                <div class="py-4 px-6 flex flex-col space-y-4">
+                  <a href="index.html" class="text-sm font-medium text-gray-500 hover:text-brand-primary dark:text-gray-400 dark:hover:text-brand-primary transition-colors">HOME PAGE 01</a>
+                  <a href="home-2.html" class="text-sm font-medium text-gray-500 hover:text-brand-primary dark:text-gray-400 dark:hover:text-brand-primary transition-colors">HOME PAGE 02</a>
+                </div>
+              </div>
+            </div>
+
+            <a href="about.html" class="relative group text-xs uppercase tracking-[0.15em] font-semibold text-gray-900 dark:text-gray-100 hover:text-brand-primary transition-colors py-2">
+              About
+              <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-brand-primary transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            
+            <a href="services.html" class="relative group text-xs uppercase tracking-[0.15em] font-semibold text-gray-900 dark:text-gray-100 hover:text-brand-primary transition-colors py-2">
+              Services
+              <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-brand-primary transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            
+            <a href="equipment.html" class="relative group text-xs uppercase tracking-[0.15em] font-semibold text-gray-900 dark:text-gray-100 hover:text-brand-primary transition-colors py-2">
+              Equipment
+              <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-brand-primary transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            
+            <a href="blog.html" class="relative group text-xs uppercase tracking-[0.15em] font-semibold text-gray-900 dark:text-gray-100 hover:text-brand-primary transition-colors py-2">
+              Blog
+              <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-brand-primary transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            
+            <a href="contact.html" class="relative group text-xs uppercase tracking-[0.15em] font-semibold text-brand-primary transition-colors py-2">
+              Contact
+              <span class="absolute bottom-0 left-0 w-full h-[2px] bg-brand-primary transition-all duration-300"></span>
+            </a>
+
+            <div class="relative group h-[90px] flex items-center">
+              <button class="text-xs uppercase tracking-[0.15em] font-semibold text-gray-900 dark:text-gray-100 hover:text-brand-primary transition-colors flex items-center relative py-2">
+                <span>Dashboard</span>
+                <i class="fas fa-chevron-down text-[10px] ml-2 transition-transform duration-300 group-hover:rotate-180"></i>
+                <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-brand-primary transition-all duration-300 group-hover:w-full"></span>
+              </button>
+              
+              <div class="absolute top-[90px] right-0 w-64 bg-white dark:bg-[#111] border border-t-0 border-gray-200 dark:border-white/10 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0 z-50">
+                <div class="py-4 px-6 flex flex-col space-y-5">
+                  <a href="admin-dashboard.html" class="flex items-center text-sm font-medium text-gray-500 hover:text-brand-primary dark:text-gray-400 dark:hover:text-brand-primary transition-colors">
+                    <i class="fas fa-user-shield w-6"></i> Admin Dashboard
+                  </a>
+                  <a href="user-dashboard.html" class="flex items-center text-sm font-medium text-gray-500 hover:text-brand-primary dark:text-gray-400 dark:hover:text-brand-primary transition-colors">
+                    <i class="fas fa-user w-6"></i> User Dashboard
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="hidden xl:flex items-center space-x-4">
+          <button type="button" onclick="window.location.href='login.html'" class="bg-brand-dark dark:bg-white text-white dark:text-brand-dark hover:bg-brand-primary dark:hover:bg-brand-primary dark:hover:text-white px-6 py-3 text-xs uppercase tracking-wider font-bold transition-all duration-300 flex items-center space-x-2">
+            <span>Login</span>
+            <i class="fas fa-arrow-right text-[10px]"></i>
           </button>
+          
+          <a href="register.html" class="bg-brand-dark dark:bg-white text-white dark:text-brand-dark hover:bg-brand-primary dark:hover:bg-brand-primary dark:hover:text-white px-6 py-3 text-xs uppercase tracking-wider font-bold transition-all duration-300 flex items-center space-x-2">
+            <span>Register</span>
+            <i class="fas fa-arrow-right text-[10px]"></i>
+          </a>
 
           <div class="h-8 w-px bg-gray-200 dark:bg-gray-800 mx-2"></div>
 
@@ -90,249 +137,339 @@
             <i class="fas fa-moon dark:hidden text-lg"></i>
             <i class="fas fa-sun hidden dark:inline text-lg"></i>
           </button>
+          
+          <button id="rtl-toggle" class="text-xs font-bold text-gray-400 hover:text-brand-primary transition-colors duration-300" title="Toggle RTL">
+            RTL
+          </button>
         </div>
 
+        <div class="xl:hidden flex items-center">
+          <button id="mobile-menu-button" class="text-gray-900 dark:text-white hover:text-brand-primary focus:outline-none transition duration-300">
+            <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path id="menu-icon" stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+              <path id="close-icon" class="hidden" stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden xl:hidden bg-white dark:bg-[#111] border-b border-gray-200 dark:border-gray-800 shadow-2xl">
+      <div class="px-6 pt-4 pb-8 space-y-0 max-h-[calc(100vh-90px)] overflow-y-auto">
+
+        <div class="border-b border-gray-100 dark:border-white/5">
+          <button id="mobile-home-dropdown" class="w-full flex items-center justify-between py-4 text-gray-900 dark:text-white hover:text-brand-primary transition duration-300">
+            <span class="text-xs uppercase tracking-widest font-bold">Home</span>
+            <i class="fas fa-plus text-xs transition-transform duration-300" id="mobile-home-icon"></i>
+          </button>
+          <div id="mobile-home-menu" class="hidden pb-4 space-y-3 pl-4 border-l-2 border-brand-primary/20 ml-2">
+            <a href="index.html" class="block text-sm font-medium text-gray-500 hover:text-brand-primary dark:text-gray-400 transition duration-300 uppercase tracking-wider">01. Home Page</a>
+            <a href="home-2.html" class="block text-sm font-medium text-gray-500 hover:text-brand-primary dark:text-gray-400 transition duration-300 uppercase tracking-wider">02. Home Page</a>
+          </div>
+        </div>
+
+        <a href="about.html" class="block py-4 border-b border-gray-100 dark:border-white/5 text-gray-900 dark:text-white hover:text-brand-primary transition duration-300 text-xs uppercase tracking-widest font-bold">About</a>
+        <a href="services.html" class="block py-4 border-b border-gray-100 dark:border-white/5 text-gray-900 dark:text-white hover:text-brand-primary transition duration-300 text-xs uppercase tracking-widest font-bold">Services</a>
+        <a href="equipment.html" class="block py-4 border-b border-gray-100 dark:border-white/5 text-gray-900 dark:text-white hover:text-brand-primary transition duration-300 text-xs uppercase tracking-widest font-bold">Equipment</a>
+        <a href="blog.html" class="block py-4 border-b border-gray-100 dark:border-white/5 text-gray-900 dark:text-white hover:text-brand-primary transition duration-300 text-xs uppercase tracking-widest font-bold">Blog</a>
+        <a href="contact.html" class="block py-4 border-b border-gray-100 dark:border-white/5 text-brand-primary transition duration-300 text-xs uppercase tracking-widest font-bold">Contact</a>
+
+        <div class="border-b border-gray-100 dark:border-white/5">
+          <button id="mobile-dashboard-dropdown" class="w-full flex items-center justify-between py-4 text-gray-900 dark:text-white hover:text-brand-primary transition duration-300">
+            <span class="text-xs uppercase tracking-widest font-bold">Dashboard</span>
+            <i class="fas fa-plus text-xs transition-transform duration-300" id="mobile-dashboard-icon"></i>
+          </button>
+          <div id="mobile-dashboard-menu" class="hidden pb-4 space-y-4 pl-4 border-l-2 border-brand-primary/20 ml-2 mt-2">
+            <a href="admin-dashboard.html" class="flex items-center text-sm font-medium text-gray-500 hover:text-brand-primary dark:text-gray-400 transition duration-300 uppercase tracking-wider">
+              <i class="fas fa-user-shield w-6"></i> Admin
+            </a>
+            <a href="user-dashboard.html" class="flex items-center text-sm font-medium text-gray-500 hover:text-brand-primary dark:text-gray-400 transition duration-300 uppercase tracking-wider">
+              <i class="fas fa-user w-6"></i> User
+            </a>
+          </div>
+        </div>
+
+        <div class="pt-8 space-y-4">
+          <button type="button" onclick="window.location.href='login.html'" class="flex items-center justify-center w-full bg-brand-dark dark:bg-white text-white dark:text-brand-dark hover:bg-brand-primary dark:hover:bg-brand-primary dark:hover:text-white px-4 py-4 font-bold uppercase tracking-widest text-center transition duration-300 text-xs space-x-2">
+            <span>Login</span>
+            <i class="fas fa-arrow-right text-[10px]"></i>
+          </button>
+          <a href="register.html" class="flex items-center justify-center w-full bg-brand-dark dark:bg-white text-white dark:text-brand-dark hover:bg-brand-primary dark:hover:bg-brand-primary dark:hover:text-white px-4 py-4 font-bold uppercase tracking-widest text-center transition duration-300 text-xs space-x-2">
+            <span>Register</span>
+            <i class="fas fa-arrow-right text-[10px]"></i>
+          </a>
+          
+          <div class="flex justify-center space-x-8 pt-4">
+            <button id="mobile-theme-toggle" class="text-gray-400 hover:text-brand-primary transition-colors flex items-center text-sm font-bold uppercase tracking-widest">
+              <i class="fas fa-moon mr-2 dark:hidden"></i>
+              <i class="fas fa-sun mr-2 hidden dark:inline"></i> Theme
+            </button>
+            <button id="mobile-rtl-toggle" class="text-gray-400 hover:text-brand-primary transition-colors flex items-center text-sm font-bold uppercase tracking-widest">
+              <i class="fas fa-language mr-2"></i> RTL
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </nav>
 
-  <div class="animated-circle-left absolute top-20 ltr:left-10 rtl:right-10 w-72 h-72 bg-brand-primary/10 rounded-full blur-3xl animate-pulse pointer-events-none"></div>
-  <div class="animated-circle-right absolute bottom-20 ltr:right-10 rtl:left-10 w-96 h-96 bg-brand-light/10 dark:bg-brand-primary/5 rounded-full blur-3xl animate-pulse pointer-events-none" style="animation-delay: 1.5s;"></div>
-
-  <div class="flex-1 flex items-center justify-center p-4 pt-[110px] pb-10">
-    <div class="w-full max-w-lg">
+  <main class="flex-grow flex flex-col pt-[90px]">
+    
+    <section class="relative min-h-[calc(100vh-90px)] flex flex-col items-center justify-center overflow-hidden border-b border-gray-200 dark:border-white/5 transition-colors duration-300">
       
-      <div class="bg-white dark:bg-[#111111] shadow-2xl p-8 md:p-10 border border-gray-200 dark:border-white/10 animate-fade-in relative z-10 group">
+      <div class="absolute inset-0 z-0">
+        <img src="https://images.unsplash.com/photo-1598387993441-a364f854c3e1?auto=format&fit=crop&w=1920&q=80" alt="Silent Disco Party" class="w-full h-full object-cover object-center" />
+        <div class="absolute inset-0 bg-[#0a0a0a]/75 transition-colors duration-300"></div>
+      </div>
 
-        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-primary to-transparent"></div>
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-lg h-64 bg-brand-primary/20 rounded-full blur-[120px] animate-pulse z-0 pointer-events-none"></div>
 
-        <div class="flex items-center justify-center mb-8 gap-4">
-          <div class="w-8 h-8 border border-brand-primary text-brand-primary flex items-center justify-center text-[10px] font-bold shadow-[0_0_10px_rgba(147,51,234,0.3)]">01</div>
-          <div class="w-8 h-px bg-gray-200 dark:bg-gray-700"></div>
-          <div class="w-8 h-8 border border-gray-200 dark:border-gray-700 text-gray-400 flex items-center justify-center text-[10px] font-bold">02</div>
-          <div class="w-8 h-px bg-gray-200 dark:bg-gray-700"></div>
-          <div class="w-8 h-8 border border-gray-200 dark:border-gray-700 text-gray-400 flex items-center justify-center text-[10px] font-bold">03</div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center animate-fade-in w-full">
+        
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight tracking-tight text-white uppercase drop-shadow-xl">
+          THE <span class="text-brand-primary">PARTY CONTACT </span>
+        </h1>
+        
+        <p class="mt-4 text-sm sm:text-base text-gray-200 font-light max-w-2xl mx-auto leading-relaxed drop-shadow-md tracking-wide">
+          Expert advice, setup guides, and creative ideas for throwing the ultimate silent disco event.
+        </p>
+        
+        <div class="mt-12 sm:mt-16 flex justify-center animate-bounce">
+          <a href="#contact-details" class="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full border border-white/20 text-white hover:border-brand-primary hover:text-brand-primary hover:bg-brand-primary/10 transition-all duration-300 bg-black/20 backdrop-blur-sm">
+          </a>
         </div>
+      </div>
+    </section>
 
-        <div class="text-center mb-8">
-          <h2 class="text-3xl font-black text-gray-900 dark:text-white uppercase tracking-tight mb-2">Create Account.</h2>
-          <p class="text-[10px] uppercase tracking-[0.2em] font-bold text-gray-500 dark:text-gray-400">Join the ultimate silent disco network</p>
-        </div>
-
-        <form class="space-y-5" onsubmit="handleRegister(event)">
-
-          <div>
-            <label class="block text-[10px] font-bold uppercase tracking-widest text-gray-900 dark:text-white mb-2">First Name</label>
-            <input 
-              type="text" 
-              required
-              placeholder="FIRST NAME"
-              class="w-full px-4 py-3 bg-transparent border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white text-xs uppercase tracking-widest focus:outline-none focus:border-brand-primary transition-all"
-            />
-          </div>
-          <div>
-            <label class="block text-[10px] font-bold uppercase tracking-widest text-gray-900 dark:text-white mb-2">Last Name</label>
-            <input 
-              type="text" 
-              required
-              placeholder="LAST NAME"
-              class="w-full px-4 py-3 bg-transparent border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white text-xs uppercase tracking-widest focus:outline-none focus:border-brand-primary transition-all"
-            />
-          </div>
-
-          <div>
-            <label class="block text-[10px] font-bold uppercase tracking-widest text-gray-900 dark:text-white mb-2">
-              Email Address
-            </label>
-            <input 
-              type="email" 
-              required
-              placeholder="YOUR.EMAIL@EXAMPLE.COM"
-              class="w-full px-4 py-3 bg-transparent border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white text-xs uppercase tracking-widest focus:outline-none focus:border-brand-primary transition-all"
-            />
-          </div>
-
-          <div>
-            <label class="block text-[10px] font-bold uppercase tracking-widest text-gray-900 dark:text-white mb-2">
-              Phone Number
-            </label>
-            <input 
-              type="tel" 
-              required
-              placeholder="+1 234 567 8900"
-              class="w-full px-4 py-3 bg-transparent border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white text-xs uppercase tracking-widest focus:outline-none focus:border-brand-primary transition-all"
-            />
-          </div>
-
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+    <section id="contact-details" class="py-20 lg:py-32 bg-white dark:bg-[#0a0a0a] transition-colors duration-300">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-16 lg:gap-24">
+          
+          <div class="animate-fade-in space-y-12">
             <div>
-              <label class="block text-[10px] font-bold uppercase tracking-widest text-gray-900 dark:text-white mb-2">Company (Optional)</label>
-              <input 
-                type="text" 
-                placeholder="YOUR ORG NAME"
-                class="w-full px-4 py-3 bg-transparent border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white text-xs uppercase tracking-widest focus:outline-none focus:border-brand-primary transition-all"
-              />
+              <h2 class="text-3xl font-black text-brand-dark dark:text-white uppercase tracking-tight mb-6">Let's Talk Party.</h2>
+              <p class="text-gray-600 dark:text-gray-400 font-light leading-relaxed">
+                Whether you have questions about our packages, need technical support, or want to customize a large-scale event, our expert team is here to help you 24/7.
+              </p>
             </div>
-            <div>
-              <label class="block text-[10px] font-bold uppercase tracking-widest text-gray-900 dark:text-white mb-2">Account Type</label>
-              <select 
-                required
-                class="w-full px-4 py-3 bg-transparent border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white text-xs uppercase tracking-widest focus:outline-none focus:border-brand-primary transition-all"
-              >
-                <option value="" disabled selected>SELECT TYPE</option>
-                <option value="private">PRIVATE HOST</option>
-                <option value="planner">EVENT PLANNER</option>
-                <option value="corporate">CORPORATE</option>
-                <option value="dj">DJ / PRODUCTION</option>
-              </select>
-            </div>
-          </div>
 
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-            <div>
-              <label class="block text-[10px] font-bold uppercase tracking-widest text-gray-900 dark:text-white mb-2">Password</label>
-              <div class="relative">
-                <input 
-                  type="password" 
-                  id="password"
-                  required
-                  placeholder="PASSWORD"
-                  class="w-full px-4 py-3 bg-transparent border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white text-xs uppercase tracking-widest focus:outline-none focus:border-brand-primary transition-all ltr:pr-8 rtl:pl-8"
-                />
-                <button 
-                  type="button" 
-                  onclick="togglePassword('password', 'toggleIcon1')"
-                  class="absolute ltr:right-3 rtl:left-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-brand-primary transition-colors"
-                >
-                  <i class="fas fa-eye text-sm" id="toggleIcon1"></i>
-                </button>
+            <div class="space-y-8">
+              <div class="flex items-start space-x-6 group">
+                <div class="w-14 h-14 bg-gray-50 dark:bg-[#111] border border-gray-100 dark:border-white/5 group-hover:border-brand-primary dark:group-hover:border-brand-primary rounded-full flex items-center justify-center flex-shrink-0 transition-colors duration-300">
+                  <i class="fas fa-map-marker-alt text-xl text-brand-primary"></i>
+                </div>
+                <div>
+                  <h3 class="text-sm uppercase tracking-[0.15em] font-bold text-brand-dark dark:text-white mb-2">Our Office</h3>
+                  <p class="text-gray-600 dark:text-gray-400 font-light leading-relaxed">
+                    123 Party Street,<br>Salem, Tamil Nadu, India
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-start space-x-6 group">
+                <div class="w-14 h-14 bg-gray-50 dark:bg-[#111] border border-gray-100 dark:border-white/5 group-hover:border-brand-primary dark:group-hover:border-brand-primary rounded-full flex items-center justify-center flex-shrink-0 transition-colors duration-300">
+                  <i class="fas fa-phone text-xl text-brand-primary"></i>
+                </div>
+                <div>
+                  <h3 class="text-sm uppercase tracking-[0.15em] font-bold text-brand-dark dark:text-white mb-2">Call Us</h3>
+                  <p class="text-gray-600 dark:text-gray-400 font-light leading-relaxed">
+                    <a href="tel:+919876543210" class="hover:text-brand-primary transition-colors">+91 98765 43210</a><br>
+                    <span class="text-xs text-gray-500">Mon-Fri from 9am to 6pm</span>
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-start space-x-6 group">
+                <div class="w-14 h-14 bg-gray-50 dark:bg-[#111] border border-gray-100 dark:border-white/5 group-hover:border-brand-primary dark:group-hover:border-brand-primary rounded-full flex items-center justify-center flex-shrink-0 transition-colors duration-300">
+                  <i class="fas fa-envelope text-xl text-brand-primary"></i>
+                </div>
+                <div>
+                  <h3 class="text-sm uppercase tracking-[0.15em] font-bold text-brand-dark dark:text-white mb-2">Email Us</h3>
+                  <p class="text-gray-600 dark:text-gray-400 font-light leading-relaxed">
+                    <a href="mailto:info@rentaldisco.com" class="hover:text-brand-primary transition-colors">info@rentaldisco.com</a><br>
+                    <a href="mailto:support@rentaldisco.com" class="hover:text-brand-primary transition-colors">support@rentaldisco.com</a>
+                  </p>
+                </div>
               </div>
             </div>
-            <div>
-              <label class="block text-[10px] font-bold uppercase tracking-widest text-gray-900 dark:text-white mb-2">Confirm</label>
-              <div class="relative">
-                <input 
-                  type="password" 
-                  id="confirmPassword"
-                  required
-                  placeholder="CONFIRM"
-                  class="w-full px-4 py-3 bg-transparent border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white text-xs uppercase tracking-widest focus:outline-none focus:border-brand-primary transition-all ltr:pr-8 rtl:pl-8"
-                />
-                <button 
-                  type="button" 
-                  onclick="togglePassword('confirmPassword', 'toggleIcon2')"
-                  class="absolute ltr:right-3 rtl:left-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-brand-primary transition-colors"
-                >
-                  <i class="fas fa-eye text-sm" id="toggleIcon2"></i>
-                </button>
+
+            <div class="pt-8 border-t border-gray-200 dark:border-white/10">
+              <h3 class="text-xs uppercase tracking-[0.2em] font-bold text-brand-dark dark:text-white mb-6">Follow The Vibe</h3>
+              <div class="flex space-x-4">
+                <a href="#" class="w-10 h-10 border border-gray-300 dark:border-white/20 text-gray-600 dark:text-gray-400 hover:border-brand-primary hover:text-brand-primary hover:bg-brand-primary/10 flex items-center justify-center transition-all duration-300 rounded-sm">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="w-10 h-10 border border-gray-300 dark:border-white/20 text-gray-600 dark:text-gray-400 hover:border-brand-primary hover:text-brand-primary hover:bg-brand-primary/10 flex items-center justify-center transition-all duration-300 rounded-sm">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="w-10 h-10 border border-gray-300 dark:border-white/20 text-gray-600 dark:text-gray-400 hover:border-brand-primary hover:text-brand-primary hover:bg-brand-primary/10 flex items-center justify-center transition-all duration-300 rounded-sm">
+                  <i class="fab fa-twitter"></i>
+                </a>
               </div>
             </div>
           </div>
 
-          <div class="flex items-center pt-2">
-            <input type="checkbox" required class="w-4 h-4 rounded-none border-gray-300 text-brand-primary focus:ring-0 focus:ring-offset-0 bg-transparent cursor-pointer">
-            <span class="ltr:ml-3 rtl:mr-3 text-[10px] uppercase tracking-widest font-bold text-gray-500 dark:text-gray-400">
-              I agree to the <span class="text-brand-primary cursor-pointer hover:text-gray-900 dark:hover:text-white transition-colors">Terms & Conditions</span>
-            </span>
+          <div class="bg-gray-50 dark:bg-[#111] p-8 md:p-12 border border-gray-100 dark:border-white/5 animate-fade-in" style="animation-delay: 0.2s;">
+            <h3 class="text-2xl font-black text-brand-dark dark:text-white uppercase tracking-tight mb-8">Send a Message</h3>
+            
+            <form action="#" method="POST" class="space-y-6">
+              
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="space-y-2">
+                  <label for="name" class="text-xs font-bold uppercase tracking-widest text-brand-dark dark:text-white">Full Name *</label>
+                  <input type="text" id="name" name="name" required class="w-full px-4 py-3 bg-white dark:bg-[#1a1a1a] border border-gray-200 dark:border-gray-800 text-brand-dark dark:text-white focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition-colors font-light">
+                </div>
+                
+                <div class="space-y-2">
+                  <label for="email" class="text-xs font-bold uppercase tracking-widest text-brand-dark dark:text-white">Email Address *</label>
+                  <input type="email" id="email" name="email" required class="w-full px-4 py-3 bg-white dark:bg-[#1a1a1a] border border-gray-200 dark:border-gray-800 text-brand-dark dark:text-white focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition-colors font-light">
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="space-y-2">
+                  <label for="phone" class="text-xs font-bold uppercase tracking-widest text-brand-dark dark:text-white">Phone Number</label>
+                  <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 bg-white dark:bg-[#1a1a1a] border border-gray-200 dark:border-gray-800 text-brand-dark dark:text-white focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition-colors font-light">
+                </div>
+                
+                <div class="space-y-2">
+                  <label for="date" class="text-xs font-bold uppercase tracking-widest text-brand-dark dark:text-white">Event Date</label>
+                  <input type="date" id="date" name="date" class="w-full px-4 py-3 bg-white dark:bg-[#1a1a1a] border border-gray-200 dark:border-gray-800 text-brand-dark dark:text-white focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition-colors font-light">
+                </div>
+              </div>
+
+              <div class="space-y-2">
+                <label for="subject" class="text-xs font-bold uppercase tracking-widest text-brand-dark dark:text-white">Subject *</label>
+                <select id="subject" name="subject" class="w-full px-4 py-3 bg-white dark:bg-[#1a1a1a] border border-gray-200 dark:border-gray-800 text-brand-dark dark:text-white focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition-colors font-light appearance-none">
+                  <option value="General Inquiry">General Inquiry</option>
+                  <option value="Booking Quote">Booking Quote</option>
+                  <option value="Technical Support">Technical Support</option>
+                  <option value="Partnership">Partnership</option>
+                </select>
+              </div>
+
+              <div class="space-y-2">
+                <label for="message" class="text-xs font-bold uppercase tracking-widest text-brand-dark dark:text-white">Your Message *</label>
+                <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 bg-white dark:bg-[#1a1a1a] border border-gray-200 dark:border-gray-800 text-brand-dark dark:text-white focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition-colors font-light resize-none"></textarea>
+              </div>
+
+              <button type="submit" class="w-full inline-flex items-center justify-center px-8 py-4 bg-brand-dark dark:bg-white text-white dark:text-brand-dark hover:bg-brand-primary dark:hover:bg-brand-primary dark:hover:text-white font-bold uppercase tracking-widest text-xs transition-all duration-300">
+                <span>Send Message</span>
+                <i class="fas fa-paper-plane ml-3"></i>
+              </button>
+
+            </form>
           </div>
 
-          <button 
-            type="submit"
-            class="w-full py-4 mt-6 bg-brand-dark dark:bg-white text-white dark:text-brand-dark hover:bg-[#7e22ce] dark:hover:bg-brand-primary dark:hover:text-white font-bold uppercase tracking-widest text-xs transition-all duration-300 flex items-center justify-center space-x-2"
-          >
-            <span>Register</span>
-            <i class="fas fa-arrow-right text-[10px]"></i>
-          </button>
+        </div>
+      </div>
+    </section>
 
-          <div class="relative my-8">
-            <div class="absolute inset-0 flex items-center">
-              <div class="w-full border-t border-gray-200 dark:border-gray-800"></div>
-            </div>
-            <div class="relative flex justify-center text-[10px] uppercase tracking-widest font-bold">
-              <span class="px-4 bg-white dark:bg-[#111111] text-gray-400">Or Sign Up With</span>
-            </div>
+    <section class="w-full h-[400px] lg:h-[500px] relative border-t border-gray-200 dark:border-white/5 bg-gray-100 dark:bg-[#111]">
+      <div class="w-full h-full grayscale hover:grayscale-0 transition-all duration-700 ease-in-out">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125016.9247754593!2d78.07722409745307!3d11.653733036034177!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babf1cc7526dae1%3A0xedc96a1a1f0fc251!2sSalem%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1699999999999!5m2!1sen!2sin" 
+          width="100%" 
+          height="100%" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Rental Disco Location Map"
+          class="absolute inset-0"
+        ></iframe>
+      </div>
+      <div class="absolute inset-0 pointer-events-none bg-brand-primary/5 dark:bg-[#0a0a0a]/30 mix-blend-multiply dark:mix-blend-overlay"></div>
+    </section>
+
+  </main>
+  
+  <footer class="bg-[#0a0a0a] text-white pt-24 pb-12 mt-auto border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        
+        <div>
+          <h3 class="text-3xl font-black tracking-tight uppercase mb-6">Rental<span class="text-brand-primary">Disco.</span></h3>
+          <p class="text-gray-400 mb-8 font-normal leading-relaxed text-base">
+            Empowering you to host the ultimate event with premium silent disco headphones and long-range audio gear.
+          </p>
+          <div class="flex space-x-4">
+            <a href="#" class="w-12 h-12 border border-white/20 hover:border-brand-primary hover:text-brand-primary flex items-center justify-center transition-all duration-300 rounded-sm">
+              <i class="fab fa-facebook-f text-base"></i>
+            </a>
+            <a href="#" class="w-12 h-12 border border-white/20 hover:border-brand-primary hover:text-brand-primary flex items-center justify-center transition-all duration-300 rounded-sm">
+              <i class="fab fa-instagram text-base"></i>
+            </a>
+            <a href="#" class="w-12 h-12 border border-white/20 hover:border-brand-primary hover:text-brand-primary flex items-center justify-center transition-all duration-300 rounded-sm">
+              <i class="fab fa-twitter text-base"></i>
+            </a>
+            <a href="#" class="w-12 h-12 border border-white/20 hover:border-brand-primary hover:text-brand-primary flex items-center justify-center transition-all duration-300 rounded-sm">
+              <i class="fab fa-linkedin-in text-base"></i>
+            </a>
           </div>
+        </div>
 
-          <div class="grid grid-cols-2 gap-4">
-            <button 
-              type="button"
-              class="flex items-center justify-center px-4 py-3 border border-gray-300 dark:border-gray-700 hover:border-brand-primary dark:hover:border-brand-primary transition-colors bg-transparent"
-            >
-              <svg class="w-4 h-4 ltr:mr-3 rtl:ml-3" viewBox="0 0 24 24">
-                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
-                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
-              </svg>
-              <span class="text-[10px] font-bold uppercase tracking-widest text-gray-900 dark:text-white">Google</span>
-            </button>
-            <button 
-              type="button"
-              class="flex items-center justify-center px-4 py-3 border border-gray-300 dark:border-gray-700 hover:border-brand-primary dark:hover:border-brand-primary transition-colors bg-transparent"
-            >
-              <i class="fab fa-facebook text-blue-600 text-lg ltr:mr-3 rtl:ml-3"></i>
-              <span class="text-[10px] font-bold uppercase tracking-widest text-gray-900 dark:text-white">Facebook</span>
-            </button>
-          </div>
+        <div>
+          <h4 class="text-sm uppercase tracking-[0.2em] font-bold mb-8 text-white">Quick Links</h4>
+          <ul class="space-y-5">
+            <li><a href="index.html" class="text-base text-gray-400 hover:text-brand-primary transition-colors duration-300">Home</a></li>
+            <li><a href="about.html" class="text-base text-gray-400 hover:text-brand-primary transition-colors duration-300">About Us</a></li>
+            <li><a href="equipment.html" class="text-base text-gray-400 hover:text-brand-primary transition-colors duration-300">Our Equipment</a></li>
+            <li><a href="blog.html" class="text-base text-gray-400 hover:text-brand-primary transition-colors duration-300">Party Blog</a></li>
+          </ul>
+        </div>
 
-        </form>
+        <div>
+          <h4 class="text-sm uppercase tracking-[0.2em] font-bold mb-8 text-white">Event Types</h4>
+          <ul class="space-y-5">
+            <li><a href="services.html" class="text-base text-gray-400 hover:text-brand-primary transition-colors duration-300">House Parties</a></li>
+            <li><a href="services.html" class="text-base text-gray-400 hover:text-brand-primary transition-colors duration-300">Weddings</a></li>
+            <li><a href="services.html" class="text-base text-gray-400 hover:text-brand-primary transition-colors duration-300">Corporate Events</a></li>
+            <li><a href="services.html" class="text-base text-gray-400 hover:text-brand-primary transition-colors duration-300">Festivals</a></li>
+            <li><a href="services.html" class="text-base text-gray-400 hover:text-brand-primary transition-colors duration-300">Fitness Classes</a></li>
+          </ul>
+        </div>
 
-        <div class="mt-8 text-center text-xs font-bold uppercase tracking-widest text-gray-500">
-          Already a Member? 
-          <a href="login.html" class="text-gray-900 dark:text-white hover:text-brand-primary transition-colors ltr:ml-2 rtl:mr-2 border-b border-brand-primary pb-0.5">Sign In</a>
+        <div>
+          <h4 class="text-sm uppercase tracking-[0.2em] font-bold mb-8 text-white">Contact Us</h4>
+          <ul class="space-y-6">
+            <li class="flex items-start">
+              <i class="fas fa-map-marker-alt text-brand-primary mt-1 mr-4 text-base"></i>
+              <span class="text-base text-gray-400 font-normal">123 Party Street, Salem, Tamil Nadu, India</span>
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-phone text-brand-primary mr-4 text-base"></i>
+              <a href="tel:+919876543210" class="text-base text-gray-400 hover:text-brand-primary transition-colors font-normal">+91 98765 43210</a>
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-envelope text-brand-primary mr-4 text-base"></i>
+              <a href="mailto:info@rentaldisco.com" class="text-base text-gray-400 hover:text-brand-primary transition-colors font-normal">info@rentaldisco.com</a>
+            </li>
+          </ul>
         </div>
 
       </div>
 
+      <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <p class="text-gray-500 text-sm tracking-wider uppercase mb-4 md:mb-0 font-medium">
+          © 2026 Rental Disco. All rights reserved.
+        </p>
+        <div class="flex space-x-6">
+          <a href="login.html" class="text-gray-400 hover:text-brand-primary text-sm tracking-wider uppercase font-medium transition-colors duration-300">Client Login</a>
+          <a href="#" class="text-gray-400 hover:text-brand-primary text-sm tracking-wider uppercase font-medium transition-colors duration-300">Privacy</a>
+          <a href="#" class="text-gray-400 hover:text-brand-primary text-sm tracking-wider uppercase font-medium transition-colors duration-300">Terms</a>
+        </div>
+      </div>
+
     </div>
-  </div>
+  </footer>
 
   <script>
-    // Password Toggle Functionality
-    function togglePassword(inputId, iconId) {
-      const passwordInput = document.getElementById(inputId);
-      const toggleIcon = document.getElementById(iconId);
-
-      if (passwordInput.type === 'password') {
-        passwordInput.type = 'text';
-        toggleIcon.classList.remove('fa-eye');
-        toggleIcon.classList.add('fa-eye-slash');
-      } else {
-        passwordInput.type = 'password';
-        toggleIcon.classList.remove('fa-eye-slash');
-        toggleIcon.classList.add('fa-eye');
-      }
-    }
-
-    // Form Submission
-    function handleRegister(event) {
-      event.preventDefault();
-
-      const password = document.getElementById('password').value;
-      const confirmPassword = document.getElementById('confirmPassword').value;
-
-      if (password !== confirmPassword) {
-        alert('PASSWORDS DO NOT MATCH!');
-        return;
-      }
-
-      const button = event.target.querySelector('button[type="submit"]');
-      const icon = button.querySelector('i');
-      const span = button.querySelector('span');
-      
-      icon.className = 'fas fa-spinner fa-spin';
-      span.innerText = 'CREATING ACCOUNT...';
-      button.disabled = true;
-      button.classList.add('opacity-50', 'cursor-not-allowed');
-
-      setTimeout(() => {
-        alert('Account created successfully! Redirecting to login...');
-        window.location.href = 'login.html';
-      }, 1500);
-    }
-
-    // Theme Toggle Function
+    // Theme Toggle
     const themeToggle = document.getElementById('theme-toggle');
+    const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
     const html = document.documentElement;
 
     function toggleTheme() {
@@ -346,10 +483,12 @@
     }
 
     if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
+    if (mobileThemeToggle) mobileThemeToggle.addEventListener('click', toggleTheme);
     if (localStorage.getItem('theme') === 'dark') html.classList.add('dark');
 
-    // RTL Toggle Function
+    // RTL Toggle
     const rtlToggle = document.getElementById('rtl-toggle');
+    const mobileRtlToggle = document.getElementById('mobile-rtl-toggle');
 
     function toggleRTL() {
       if (html.getAttribute('dir') === 'rtl') {
@@ -362,8 +501,45 @@
     }
 
     if (rtlToggle) rtlToggle.addEventListener('click', toggleRTL);
+    if (mobileRtlToggle) mobileRtlToggle.addEventListener('click', toggleRTL);
     if (localStorage.getItem('direction') === 'rtl') html.setAttribute('dir', 'rtl');
-  </script>
 
+    // Mobile Menu Toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      menuIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+    });
+
+    // Mobile Dropdowns Toggle Function
+    function setupMobileDropdown(dropdownId, menuId, iconId) {
+      const dropdown = document.getElementById(dropdownId);
+      const menu = document.getElementById(menuId);
+      const icon = document.getElementById(iconId);
+      
+      if(dropdown && menu && icon) {
+        dropdown.addEventListener('click', () => {
+          menu.classList.toggle('hidden');
+          if(menu.classList.contains('hidden')) {
+            icon.classList.remove('fa-minus');
+            icon.classList.add('fa-plus');
+          } else {
+            icon.classList.remove('fa-plus');
+            icon.classList.add('fa-minus');
+          }
+        });
+      }
+    }
+
+    // Initialize dropdowns
+    setupMobileDropdown('mobile-home-dropdown', 'mobile-home-menu', 'mobile-home-icon');
+    setupMobileDropdown('mobile-dashboard-dropdown', 'mobile-dashboard-menu', 'mobile-dashboard-icon');
+
+  </script>
 </body>
 </html>
