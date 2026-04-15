@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8"><script src="tailwind.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rental Disco - Silent Headphone Party Rentals</title>
   <link rel="icon" type="image/jpeg" href="images/rentaldisco_logo.jpg">
   <meta name="description" content="Premium silent disco headphone rentals for your next epic party or event.">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="tailwind.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <script>
@@ -216,61 +216,54 @@
 
   <main class="flex-grow flex flex-col pt-[90px]">
     
-    <section id="home" class="relative flex-grow flex items-center justify-center overflow-hidden py-16 lg:py-24 bg-gradient-to-br from-gray-50 via-white to-brand-light/40 dark:from-[#0a0a0a] dark:via-[#111] dark:to-brand-dark">
-      <div class="absolute top-20 left-10 w-72 h-72 bg-brand-primary/10 rounded-full blur-3xl animate-pulse"></div>
-      <div class="absolute bottom-20 right-10 w-96 h-96 bg-brand-light/20 dark:bg-brand-primary/10 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+    <section id="home" class="relative flex-grow flex items-center justify-center overflow-hidden min-h-[calc(100vh-90px)] py-16 lg:py-24">
+      
+      <div class="absolute inset-0 z-0">
+        <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=2000&q=80" alt="Silent Disco Party" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-b from-brand-dark/80 via-brand-dark/70 to-brand-dark/90 dark:from-black/80 dark:via-black/70 dark:to-black/90"></div>
+      </div>
 
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-        <div class="grid lg:grid-cols-2 gap-12 items-center">
-
-          <div class="text-brand-dark dark:text-white space-y-8 animate-fade-in">
-            <div class="inline-flex items-center px-4 py-2 border border-gray-200 dark:border-white/10 rounded-none bg-white/50 dark:bg-black/50 backdrop-blur-sm">
-              <span class="w-1.5 h-1.5 bg-brand-primary mr-3 rounded-full shadow-[0_0_8px_#9333EA]"></span>
-              <span class="text-[10px] uppercase tracking-[0.2em] font-bold text-gray-500 dark:text-gray-400">Premium Headphone Rentals</span>
-            </div>
-
-            <h1 class="text-5xl sm:text-6xl lg:text-7xl font-black leading-tight tracking-tight">
-              OWN THE <br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-[#c084fc]">NIGHT.</span>
-            </h1>
-
-            <p class="text-lg text-gray-600 dark:text-gray-400 leading-relaxed font-light max-w-lg">
-              Experience the ultimate silent disco with our premium glowing LED headphones and long-range transmitters. Delivered straight to your door.
-            </p>
-
-            <div class="flex flex-wrap gap-4 pt-4">
-              <a href="contact.html" class="inline-flex items-center justify-center px-8 py-4 bg-brand-dark dark:bg-white text-white dark:text-brand-dark hover:bg-brand-primary dark:hover:bg-brand-primary dark:hover:text-white font-bold uppercase tracking-widest text-xs transition-all duration-300">
-                <span>Book Equipment</span>
-                <i class="fas fa-arrow-right ml-3"></i>
-              </a>
-              <a href="services.html" class="inline-flex items-center justify-center px-8 py-4 bg-transparent border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white hover:border-brand-primary hover:text-brand-primary font-bold uppercase tracking-widest text-xs transition-all duration-300">
-                <span>Event Packages</span>
-              </a>
-            </div>
-
-            <div class="grid grid-cols-3 gap-8 pt-10 border-t border-gray-200 dark:border-gray-800 mt-10">
-              <div>
-                <div class="text-3xl font-black text-gray-900 dark:text-white mb-1">10k<span class="text-brand-primary">+</span></div>
-                <div class="text-[10px] uppercase tracking-widest text-gray-500 font-bold">Headphones</div>
-              </div>
-              <div>
-                <div class="text-3xl font-black text-gray-900 dark:text-white mb-1">3<span class="text-brand-primary"></span></div>
-                <div class="text-[10px] uppercase tracking-widest text-gray-500 font-bold">Audio Channels</div>
-              </div>
-              <div>
-                <div class="text-3xl font-black text-gray-900 dark:text-white mb-1">24<span class="text-brand-primary">/7</span></div>
-                <div class="text-[10px] uppercase tracking-widest text-gray-500 font-bold">Support</div>
-              </div>
-            </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full flex flex-col items-center">
+        <div class="max-w-3xl mx-auto text-center text-white space-y-8 animate-fade-in flex flex-col items-center">
+          
+          <div class="inline-flex items-center px-4 py-2 border border-white/20 rounded-none bg-black/40 backdrop-blur-sm">
+            <span class="w-1.5 h-1.5 bg-brand-primary mr-3 rounded-full shadow-[0_0_8px_#9333EA]"></span>
+            <span class="text-[10px] uppercase tracking-[0.2em] font-bold text-gray-300">Premium Headphone Rentals</span>
           </div>
 
-          <div class="relative animate-fade-in lg:pl-10">
-             <div class="relative overflow-hidden shadow-2xl h-[550px] lg:h-[650px] w-full group">
-               <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1000&q=80" alt="Silent Disco Party" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
-               <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-transparent to-transparent"></div>
-               <div class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-brand-primary to-transparent"></div>
-             </div>
+          <h1 class="text-5xl sm:text-6xl lg:text-7xl font-black leading-tight tracking-tight text-white">
+            OWN THE <br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-[#c084fc]">NIGHT.</span>
+          </h1>
+
+          <p class="text-lg text-gray-300 leading-relaxed font-light max-w-lg mx-auto">
+            Experience the ultimate silent disco with our premium glowing LED headphones and long-range transmitters. Delivered straight to your door.
+          </p>
+
+          <div class="flex flex-wrap justify-center gap-4 pt-4 w-full">
+            <a href="contact.html" class="inline-flex items-center justify-center px-8 py-4 bg-white text-brand-dark hover:bg-brand-primary hover:text-white font-bold uppercase tracking-widest text-xs transition-all duration-300">
+              <span>Book Equipment</span>
+              <i class="fas fa-arrow-right ml-3"></i>
+            </a>
+            <a href="services.html" class="inline-flex items-center justify-center px-8 py-4 bg-transparent border border-white/50 text-white hover:border-brand-primary hover:bg-brand-primary hover:text-white font-bold uppercase tracking-widest text-xs transition-all duration-300">
+              <span>Event Packages</span>
+            </a>
           </div>
 
+          <div class="grid grid-cols-3 gap-8 pt-10 border-t border-white/20 mt-10 w-full max-w-2xl">
+            <div>
+              <div class="text-3xl font-black text-white mb-1">10k<span class="text-brand-primary">+</span></div>
+              <div class="text-[10px] uppercase tracking-widest text-gray-400 font-bold">Headphones</div>
+            </div>
+            <div>
+              <div class="text-3xl font-black text-white mb-1">3<span class="text-brand-primary"></span></div>
+              <div class="text-[10px] uppercase tracking-widest text-gray-400 font-bold">Audio Channels</div>
+            </div>
+            <div>
+              <div class="text-3xl font-black text-white mb-1">24<span class="text-brand-primary">/7</span></div>
+              <div class="text-[10px] uppercase tracking-widest text-gray-400 font-bold">Support</div>
+            </div>
+          </div>
+          
         </div>
       </div>
     </section>
