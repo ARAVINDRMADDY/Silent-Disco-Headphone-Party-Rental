@@ -121,12 +121,14 @@
         </div>
 
         <div class="hidden xl:flex items-center space-x-4">
-          <button type="button" onclick="window.location.href='login.html'" class="bg-brand-dark dark:bg-white text-white dark:text-brand-dark hover:bg-brand-primary dark:hover:bg-brand-primary dark:hover:text-white px-6 py-3 text-xs uppercase tracking-wider font-bold transition-all duration-300 flex items-center space-x-2">
+          <!-- Primary Action: Login -->
+          <button type="button" onclick="window.location.href='login.html'" class="bg-brand-primary text-white hover:bg-purple-700 px-6 py-3 border border-brand-primary text-xs uppercase tracking-wider font-bold transition-all duration-300 flex items-center space-x-2">
             <span>Login</span>
             <i class="fas fa-arrow-right text-[10px]"></i>
           </button>
           
-          <a href="register.html" class="bg-brand-dark dark:bg-white text-white dark:text-brand-dark hover:bg-brand-primary dark:hover:bg-brand-primary dark:hover:text-white px-6 py-3 text-xs uppercase tracking-wider font-bold transition-all duration-300 flex items-center space-x-2">
+          <!-- Secondary Action: Register -->
+          <a href="register.html" class="bg-transparent border border-brand-dark dark:border-white text-brand-dark dark:text-white hover:bg-brand-dark hover:text-white dark:hover:bg-white dark:hover:text-brand-dark px-6 py-3 text-xs uppercase tracking-wider font-bold transition-all duration-300 flex items-center space-x-2">
             <span>Register</span>
             <i class="fas fa-arrow-right text-[10px]"></i>
           </a>
@@ -191,11 +193,14 @@
         </div>
 
         <div class="pt-8 space-y-4">
-          <button type="button" onclick="window.location.href='login.html'" class="flex items-center justify-center w-full bg-brand-dark dark:bg-white text-white dark:text-brand-dark hover:bg-brand-primary dark:hover:bg-brand-primary dark:hover:text-white px-4 py-4 font-bold uppercase tracking-widest text-center transition duration-300 text-xs space-x-2">
+          <!-- Primary Action: Login -->
+          <button type="button" onclick="window.location.href='login.html'" class="flex items-center justify-center w-full bg-brand-primary text-white hover:bg-purple-700 border border-brand-primary px-4 py-4 font-bold uppercase tracking-widest text-center transition duration-300 text-xs space-x-2">
             <span>Login</span>
             <i class="fas fa-arrow-right text-[10px]"></i>
           </button>
-          <a href="register.html" class="flex items-center justify-center w-full bg-brand-dark dark:bg-white text-white dark:text-brand-dark hover:bg-brand-primary dark:hover:bg-brand-primary dark:hover:text-white px-4 py-4 font-bold uppercase tracking-widest text-center transition duration-300 text-xs space-x-2">
+          
+          <!-- Secondary Action: Register -->
+          <a href="register.html" class="flex items-center justify-center w-full bg-transparent border border-brand-dark dark:border-white text-brand-dark dark:text-white hover:bg-brand-dark hover:text-white dark:hover:bg-white dark:hover:text-brand-dark px-4 py-4 font-bold uppercase tracking-widest text-center transition duration-300 text-xs space-x-2">
             <span>Register</span>
             <i class="fas fa-arrow-right text-[10px]"></i>
           </a>
@@ -216,7 +221,8 @@
 
   <main class="flex-grow flex flex-col pt-[90px]">
     
-    <section class="relative min-h-[calc(100vh-90px)] flex flex-col items-center justify-center overflow-hidden border-b border-gray-200 dark:border-white/5 transition-colors duration-300">
+    <!-- Changed: Replaced 'min-h-[calc(100vh-90px)]' with 'py-28 md:py-36' -->
+    <section class="relative py-28 md:py-36 flex flex-col items-center justify-center overflow-hidden border-b border-gray-200 dark:border-white/5 transition-colors duration-300">
       
       <div class="absolute inset-0 z-0">
         <img src="https://images.unsplash.com/photo-1598387993441-a364f854c3e1?auto=format&fit=crop&w=1920&q=80" alt="Silent Disco Party" class="w-full h-full object-cover object-center" />

@@ -119,12 +119,14 @@
         </div>
 
         <div class="hidden xl:flex items-center space-x-4">
-          <button type="button" onclick="window.location.href='login.html'" class="bg-brand-dark dark:bg-white text-white dark:text-brand-dark hover:bg-brand-primary dark:hover:bg-brand-primary dark:hover:text-white px-6 py-3 text-xs uppercase tracking-wider font-bold transition-all duration-300 flex items-center space-x-2">
+          <!-- Primary Action: Login -->
+          <button type="button" onclick="window.location.href='login.html'" class="bg-brand-primary text-white hover:bg-purple-700 px-6 py-3 border border-brand-primary text-xs uppercase tracking-wider font-bold transition-all duration-300 flex items-center space-x-2">
             <span>Login</span>
             <i class="fas fa-arrow-right text-[10px]"></i>
           </button>
           
-          <a href="register.html" class="bg-brand-dark dark:bg-white text-white dark:text-brand-dark hover:bg-brand-primary dark:hover:bg-brand-primary dark:hover:text-white px-6 py-3 text-xs uppercase tracking-wider font-bold transition-all duration-300 flex items-center space-x-2">
+          <!-- Secondary Action: Register -->
+          <a href="register.html" class="bg-transparent border border-brand-dark dark:border-white text-brand-dark dark:text-white hover:bg-brand-dark hover:text-white dark:hover:bg-white dark:hover:text-brand-dark px-6 py-3 text-xs uppercase tracking-wider font-bold transition-all duration-300 flex items-center space-x-2">
             <span>Register</span>
             <i class="fas fa-arrow-right text-[10px]"></i>
           </a>
@@ -189,11 +191,14 @@
         </div>
 
         <div class="pt-8 space-y-4">
-          <button type="button" onclick="window.location.href='login.html'" class="flex items-center justify-center w-full bg-brand-dark dark:bg-white text-white dark:text-brand-dark hover:bg-brand-primary dark:hover:bg-brand-primary dark:hover:text-white px-4 py-4 font-bold uppercase tracking-widest text-center transition duration-300 text-xs space-x-2">
+          <!-- Primary Action: Login -->
+          <button type="button" onclick="window.location.href='login.html'" class="flex items-center justify-center w-full bg-brand-primary text-white hover:bg-purple-700 border border-brand-primary px-4 py-4 font-bold uppercase tracking-widest text-center transition duration-300 text-xs space-x-2">
             <span>Login</span>
             <i class="fas fa-arrow-right text-[10px]"></i>
           </button>
-          <a href="register.html" class="flex items-center justify-center w-full bg-brand-dark dark:bg-white text-white dark:text-brand-dark hover:bg-brand-primary dark:hover:bg-brand-primary dark:hover:text-white px-4 py-4 font-bold uppercase tracking-widest text-center transition duration-300 text-xs space-x-2">
+          
+          <!-- Secondary Action: Register -->
+          <a href="register.html" class="flex items-center justify-center w-full bg-transparent border border-brand-dark dark:border-white text-brand-dark dark:text-white hover:bg-brand-dark hover:text-white dark:hover:bg-white dark:hover:text-brand-dark px-4 py-4 font-bold uppercase tracking-widest text-center transition duration-300 text-xs space-x-2">
             <span>Register</span>
             <i class="fas fa-arrow-right text-[10px]"></i>
           </a>
@@ -214,7 +219,8 @@
 
   <main class="flex-grow flex flex-col pt-[90px]">
 
-    <section class="relative min-h-[calc(100vh-90px)] flex items-center justify-center bg-brand-dark text-white overflow-hidden">
+    <!-- Changed: Replaced 'min-h-[calc(100vh-90px)]' with 'py-28 md:py-36' -->
+    <section class="relative py-28 md:py-36 flex items-center justify-center bg-brand-dark text-white overflow-hidden">
       <div class="absolute inset-0 z-0">
         <img src="images/dj-services.jpg" alt="DJ Services" class="w-full h-full object-cover">
         <div class="absolute inset-0 bg-[#0a0a0a]/60 dark:bg-[#111]/60"></div>
@@ -405,38 +411,65 @@
 
         <div class="grid md:grid-cols-3 gap-8">
           
-          <div class="bg-[#111] border border-white/10 p-8 rounded-xl hover:bg-[#151515] transition-colors duration-300 text-center">
-            <div class="w-20 h-20 mx-auto bg-brand-primary/20 rounded-full flex items-center justify-center mb-6">
+          <!-- Pricing Card 1 -->
+          <div class="bg-[#111] border border-white/10 p-8 rounded-xl hover:bg-[#151515] transition-colors duration-300 text-center flex flex-col h-full">
+            <div class="w-20 h-20 mx-auto bg-brand-primary/20 rounded-full flex items-center justify-center mb-6 shrink-0">
               <i class="fas fa-stamp text-3xl text-brand-primary"></i>
             </div>
             <h3 class="text-xl font-bold uppercase tracking-wider mb-3">Custom Branding</h3>
-            <p class="text-gray-400 text-sm font-light leading-relaxed mb-6">
+            <p class="text-gray-400 text-sm font-light leading-relaxed mb-6 flex-grow">
               Make the gear your own. We can apply custom vinyl decals of your corporate logo, wedding hashtag, or event branding to the earcups.
             </p>
-            <span class="text-brand-primary font-bold text-sm tracking-widest uppercase block">Starts at $99</span>
+            <div class="mt-auto pt-6 border-t border-white/10 w-full">
+              <div class="flex flex-col items-center justify-center mb-4">
+                <span class="text-[10px] text-gray-500 uppercase tracking-widest font-bold mb-1">Starts at</span>
+                <span class="text-3xl font-black text-white">$99</span>
+              </div>
+              <a href="contact.html" class="block w-full py-3 bg-transparent border border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-white font-bold uppercase tracking-widest text-xs transition-colors rounded">
+                Add to Package
+              </a>
+            </div>
           </div>
 
-          <div class="bg-[#111] border border-brand-primary p-8 rounded-xl shadow-[0_0_30px_rgba(147,51,234,0.15)] hover:shadow-[0_0_40px_rgba(147,51,234,0.3)] transition-all duration-300 text-center transform scale-105">
-            <div class="absolute top-0 right-0 bg-brand-primary text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-bl-lg">Popular</div>
-            <div class="w-20 h-20 mx-auto bg-brand-primary text-white rounded-full flex items-center justify-center mb-6">
+          <!-- Pricing Card 2 (Popular) -->
+          <div class="relative bg-[#111] border border-brand-primary p-8 rounded-xl shadow-[0_0_30px_rgba(147,51,234,0.15)] hover:shadow-[0_0_40px_rgba(147,51,234,0.3)] transition-all duration-300 text-center transform md:scale-105 flex flex-col h-full">
+            <div class="absolute top-0 right-0 bg-brand-primary text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-bl-lg rounded-tr-xl">Popular</div>
+            <div class="w-20 h-20 mx-auto bg-brand-primary text-white rounded-full flex items-center justify-center mb-6 shrink-0">
               <i class="fas fa-lightbulb text-3xl"></i>
             </div>
             <h3 class="text-xl font-bold uppercase tracking-wider mb-3">Neon Lighting</h3>
-            <p class="text-gray-300 text-sm font-light leading-relaxed mb-6">
+            <p class="text-gray-300 text-sm font-light leading-relaxed mb-6 flex-grow">
               Transform any dark room. Includes 4 sound-reactive LED wash lights, 2 mini-lasers, and a glowing DJ facade to create an instant club atmosphere.
             </p>
-            <span class="text-brand-primary font-bold text-sm tracking-widest uppercase block">Starts at $149</span>
+            <div class="mt-auto pt-6 border-t border-white/10 w-full">
+              <div class="flex flex-col items-center justify-center mb-4">
+                <span class="text-[10px] text-brand-primary/80 uppercase tracking-widest font-bold mb-1">Starts at</span>
+                <span class="text-3xl font-black text-white">$149</span>
+              </div>
+              <a href="contact.html" class="block w-full py-3 bg-brand-primary border border-brand-primary text-white hover:bg-[#7e22ce] font-bold uppercase tracking-widest text-xs transition-colors rounded">
+                Add to Package
+              </a>
+            </div>
           </div>
 
-          <div class="bg-[#111] border border-white/10 p-8 rounded-xl hover:bg-[#151515] transition-colors duration-300 text-center">
-            <div class="w-20 h-20 mx-auto bg-brand-primary/20 rounded-full flex items-center justify-center mb-6">
+          <!-- Pricing Card 3 -->
+          <div class="bg-[#111] border border-white/10 p-8 rounded-xl hover:bg-[#151515] transition-colors duration-300 text-center flex flex-col h-full">
+            <div class="w-20 h-20 mx-auto bg-brand-primary/20 rounded-full flex items-center justify-center mb-6 shrink-0">
               <i class="fas fa-sliders-h text-3xl text-brand-primary"></i>
             </div>
             <h3 class="text-xl font-bold uppercase tracking-wider mb-3">DJ Mixer Rentals</h3>
-            <p class="text-gray-400 text-sm font-light leading-relaxed mb-6">
+            <p class="text-gray-400 text-sm font-light leading-relaxed mb-6 flex-grow">
               Don't have professional audio gear? Rent our pre-configured iPad DJ setups or professional Pioneer DJ controllers, fully mapped to our transmitters.
             </p>
-            <span class="text-brand-primary font-bold text-sm tracking-widest uppercase block">Starts at $75</span>
+            <div class="mt-auto pt-6 border-t border-white/10 w-full">
+              <div class="flex flex-col items-center justify-center mb-4">
+                <span class="text-[10px] text-gray-500 uppercase tracking-widest font-bold mb-1">Starts at</span>
+                <span class="text-3xl font-black text-white">$75</span>
+              </div>
+              <a href="contact.html" class="block w-full py-3 bg-transparent border border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-white font-bold uppercase tracking-widest text-xs transition-colors rounded">
+                Add to Package
+              </a>
+            </div>
           </div>
 
         </div>

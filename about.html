@@ -121,12 +121,14 @@
         </div>
 
         <div class="hidden xl:flex items-center space-x-4">
-          <button type="button" onclick="window.location.href='login.html'" class="bg-brand-dark dark:bg-white text-white dark:text-brand-dark hover:bg-brand-primary dark:hover:bg-brand-primary dark:hover:text-white px-6 py-3 text-xs uppercase tracking-wider font-bold transition-all duration-300 flex items-center space-x-2">
+          <!-- Main Action: Login gets the primary brand color -->
+          <button type="button" onclick="window.location.href='login.html'" class="bg-brand-primary text-white hover:bg-purple-700 border border-brand-primary px-6 py-3 text-xs uppercase tracking-wider font-bold transition-all duration-300 flex items-center space-x-2">
             <span>Login</span>
             <i class="fas fa-arrow-right text-[10px]"></i>
           </button>
           
-          <a href="register.html" class="bg-brand-dark dark:bg-white text-white dark:text-brand-dark hover:bg-brand-primary dark:hover:bg-brand-primary dark:hover:text-white px-6 py-3 text-xs uppercase tracking-wider font-bold transition-all duration-300 flex items-center space-x-2">
+          <!-- Secondary Action: Register gets an outline adapting to light/dark mode -->
+          <a href="register.html" class="bg-transparent border border-brand-dark dark:border-white text-brand-dark dark:text-white hover:bg-brand-dark hover:text-white dark:hover:bg-white dark:hover:text-brand-dark px-6 py-3 text-xs uppercase tracking-wider font-bold transition-all duration-300 flex items-center space-x-2">
             <span>Register</span>
             <i class="fas fa-arrow-right text-[10px]"></i>
           </a>
@@ -191,11 +193,14 @@
         </div>
 
         <div class="pt-8 space-y-4">
-          <button type="button" onclick="window.location.href='login.html'" class="flex items-center justify-center w-full bg-brand-dark dark:bg-white text-white dark:text-brand-dark hover:bg-brand-primary dark:hover:bg-brand-primary dark:hover:text-white px-4 py-4 font-bold uppercase tracking-widest text-center transition duration-300 text-xs space-x-2">
+          <!-- Mobile Main Action: Login gets the primary brand color -->
+          <button type="button" onclick="window.location.href='login.html'" class="flex items-center justify-center w-full bg-brand-primary text-white hover:bg-purple-700 border border-brand-primary px-4 py-4 font-bold uppercase tracking-widest text-center transition duration-300 text-xs space-x-2">
             <span>Login</span>
             <i class="fas fa-arrow-right text-[10px]"></i>
           </button>
-          <a href="register.html" class="flex items-center justify-center w-full bg-brand-dark dark:bg-white text-white dark:text-brand-dark hover:bg-brand-primary dark:hover:bg-brand-primary dark:hover:text-white px-4 py-4 font-bold uppercase tracking-widest text-center transition duration-300 text-xs space-x-2">
+          
+          <!-- Mobile Secondary Action: Register gets an outline adapting to light/dark mode -->
+          <a href="register.html" class="flex items-center justify-center w-full bg-transparent border border-brand-dark dark:border-white text-brand-dark dark:text-white hover:bg-brand-dark hover:text-white dark:hover:bg-white dark:hover:text-brand-dark px-4 py-4 font-bold uppercase tracking-widest text-center transition duration-300 text-xs space-x-2">
             <span>Register</span>
             <i class="fas fa-arrow-right text-[10px]"></i>
           </a>
@@ -216,7 +221,7 @@
 
   <main class="flex-grow flex flex-col pt-[90px]">
     
-    <section class="relative min-h-[calc(100vh-90px)] flex items-center justify-center bg-brand-dark text-white overflow-hidden">
+    <section class="relative py-28 md:py-36 flex items-center justify-center bg-brand-dark text-white overflow-hidden">
       <div class="absolute inset-0 z-0">
         <img src="images/silent-fest-events-entertainment.jpg" alt="Silent Disco Events" class="w-full h-full object-cover">
         <div class="absolute inset-0 bg-[#0a0a0a]/60 dark:bg-[#111]/60"></div>

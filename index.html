@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"><script src="tailwind.js"></script>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rental Disco - Silent Headphone Party Rentals</title>
   <link rel="icon" type="image/jpeg" href="images/rentaldisco_logo.jpg">
@@ -121,12 +121,14 @@
         </div>
 
         <div class="hidden xl:flex items-center space-x-4">
-          <button type="button" onclick="window.location.href='login.html'" class="bg-brand-dark dark:bg-white text-white dark:text-brand-dark hover:bg-brand-primary dark:hover:bg-brand-primary dark:hover:text-white px-6 py-3 text-xs uppercase tracking-wider font-bold transition-all duration-300 flex items-center space-x-2">
+          <!-- Primary Action: Login -->
+          <button type="button" onclick="window.location.href='login.html'" class="bg-brand-primary text-white hover:bg-purple-700 px-6 py-3 border border-brand-primary text-xs uppercase tracking-wider font-bold transition-all duration-300 flex items-center space-x-2">
             <span>Login</span>
             <i class="fas fa-arrow-right text-[10px]"></i>
           </button>
           
-          <a href="register.html" class="bg-brand-dark dark:bg-white text-white dark:text-brand-dark hover:bg-brand-primary dark:hover:bg-brand-primary dark:hover:text-white px-6 py-3 text-xs uppercase tracking-wider font-bold transition-all duration-300 flex items-center space-x-2">
+          <!-- Secondary Action: Register -->
+          <a href="register.html" class="bg-transparent border border-brand-dark dark:border-white text-brand-dark dark:text-white hover:bg-brand-dark hover:text-white dark:hover:bg-white dark:hover:text-brand-dark px-6 py-3 text-xs uppercase tracking-wider font-bold transition-all duration-300 flex items-center space-x-2">
             <span>Register</span>
             <i class="fas fa-arrow-right text-[10px]"></i>
           </a>
@@ -191,11 +193,14 @@
         </div>
 
         <div class="pt-8 space-y-4">
-          <button type="button" onclick="window.location.href='login.html'" class="flex items-center justify-center w-full bg-brand-dark dark:bg-white text-white dark:text-brand-dark hover:bg-brand-primary dark:hover:bg-brand-primary dark:hover:text-white px-4 py-4 font-bold uppercase tracking-widest text-center transition duration-300 text-xs space-x-2">
+          <!-- Primary Action: Login -->
+          <button type="button" onclick="window.location.href='login.html'" class="flex items-center justify-center w-full bg-brand-primary text-white hover:bg-purple-700 border border-brand-primary px-4 py-4 font-bold uppercase tracking-widest text-center transition duration-300 text-xs space-x-2">
             <span>Login</span>
             <i class="fas fa-arrow-right text-[10px]"></i>
           </button>
-          <a href="register.html" class="flex items-center justify-center w-full bg-brand-dark dark:bg-white text-white dark:text-brand-dark hover:bg-brand-primary dark:hover:bg-brand-primary dark:hover:text-white px-4 py-4 font-bold uppercase tracking-widest text-center transition duration-300 text-xs space-x-2">
+          
+          <!-- Secondary Action: Register -->
+          <a href="register.html" class="flex items-center justify-center w-full bg-transparent border border-brand-dark dark:border-white text-brand-dark dark:text-white hover:bg-brand-dark hover:text-white dark:hover:bg-white dark:hover:text-brand-dark px-4 py-4 font-bold uppercase tracking-widest text-center transition duration-300 text-xs space-x-2">
             <span>Register</span>
             <i class="fas fa-arrow-right text-[10px]"></i>
           </a>
@@ -251,7 +256,52 @@
       </div>
     </section>
 
-    <section id="features" class="py-20 bg-white dark:bg-[#0a0a0a] transition-colors duration-300">
+    <!-- NEW SECTION: Use Case / Value Proposition -->
+    <section id="why-rent" class="py-20 bg-white dark:bg-[#0a0a0a] transition-colors duration-300 border-b border-gray-200 dark:border-white/5">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-brand-primary text-xs font-bold tracking-[0.2em] uppercase mb-4 block">The Value</span>
+          <h2 class="text-4xl md:text-5xl font-black text-brand-dark dark:text-white tracking-tight mb-6">
+            WHY GO SILENT?
+          </h2>
+          <p class="text-gray-600 dark:text-gray-400 text-lg font-light leading-relaxed">
+            Our silent disco rentals do more than just play music—they solve common event problems while creating an unforgettable, immersive experience for your guests.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Use Case 1: Noise Control -->
+          <div class="bg-gray-50 dark:bg-[#111] p-8 border-t-4 border-brand-primary shadow-sm hover:-translate-y-2 transition-all duration-300">
+            <i class="fas fa-volume-mute text-3xl text-brand-primary mb-6"></i>
+            <h3 class="text-xl font-bold text-brand-dark dark:text-white mb-3 uppercase tracking-wide">Beat the Curfew</h3>
+            <p class="text-gray-500 dark:text-gray-400 font-light leading-relaxed">
+              Strict venue noise ordinances? Complaining neighbors? Keep the party going past 10 PM. Turn off the loudspeakers and turn up the headphones anywhere, anytime.
+            </p>
+          </div>
+
+          <!-- Use Case 2: 3 Channels -->
+          <div class="bg-gray-50 dark:bg-[#111] p-8 border-t-4 border-brand-primary shadow-sm hover:-translate-y-2 transition-all duration-300">
+            <i class="fas fa-sliders-h text-3xl text-brand-primary mb-6"></i>
+            <h3 class="text-xl font-bold text-brand-dark dark:text-white mb-3 uppercase tracking-wide">End the Music Debates</h3>
+            <p class="text-gray-500 dark:text-gray-400 font-light leading-relaxed">
+              With 3 separate audio channels, you can broadcast 3 different genres simultaneously. Let EDM fans, Hip-Hop lovers, and Top-40 enthusiasts dance together on the same floor.
+            </p>
+          </div>
+
+          <!-- Use Case 3: Social interaction -->
+          <div class="bg-gray-50 dark:bg-[#111] p-8 border-t-4 border-brand-primary shadow-sm hover:-translate-y-2 transition-all duration-300">
+            <i class="fas fa-comments text-3xl text-brand-primary mb-6"></i>
+            <h3 class="text-xl font-bold text-brand-dark dark:text-white mb-3 uppercase tracking-wide">Actually Talk to People</h3>
+            <p class="text-gray-500 dark:text-gray-400 font-light leading-relaxed">
+              Tired of screaming over club speakers? Simply slip the headphones off to have a conversation at normal volume while everyone else around you keeps dancing.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- UPDATED: Alternated background color to gray-50 / dark:#111 for contrast -->
+    <section id="features" class="py-20 bg-gray-50 dark:bg-[#111] transition-colors duration-300 border-b border-gray-200 dark:border-white/5">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center max-w-3xl mx-auto mb-16">
           <span class="text-brand-primary text-xs font-bold tracking-[0.2em] uppercase mb-4 block">The Process</span>
@@ -264,8 +314,8 @@
         </div>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div class="group bg-gray-50 dark:bg-[#111] p-10 border border-gray-100 dark:border-white/5 hover:border-brand-primary dark:hover:border-brand-primary transition-all duration-300 hover:-translate-y-2">
-            <div class="w-16 h-16 bg-white dark:bg-[#1a1a1a] rounded-full flex items-center justify-center mb-8 shadow-sm group-hover:bg-brand-primary transition-colors duration-300">
+          <div class="group bg-white dark:bg-[#1a1a1a] p-10 border border-gray-100 dark:border-white/5 hover:border-brand-primary dark:hover:border-brand-primary transition-all duration-300 hover:-translate-y-2">
+            <div class="w-16 h-16 bg-gray-50 dark:bg-[#111] rounded-full flex items-center justify-center mb-8 shadow-sm group-hover:bg-brand-primary transition-colors duration-300">
               <i class="fas fa-box-open text-2xl text-brand-dark dark:text-white group-hover:text-white transition-colors duration-300"></i>
             </div>
             <h3 class="text-xl font-bold text-brand-dark dark:text-white mb-4 uppercase tracking-wide">We Ship It</h3>
@@ -277,8 +327,8 @@
             </a>
           </div>
 
-          <div class="group bg-gray-50 dark:bg-[#111] p-10 border border-gray-100 dark:border-white/5 hover:border-brand-primary dark:hover:border-brand-primary transition-all duration-300 hover:-translate-y-2">
-            <div class="w-16 h-16 bg-white dark:bg-[#1a1a1a] rounded-full flex items-center justify-center mb-8 shadow-sm group-hover:bg-brand-primary transition-colors duration-300">
+          <div class="group bg-white dark:bg-[#1a1a1a] p-10 border border-gray-100 dark:border-white/5 hover:border-brand-primary dark:hover:border-brand-primary transition-all duration-300 hover:-translate-y-2">
+            <div class="w-16 h-16 bg-gray-50 dark:bg-[#111] rounded-full flex items-center justify-center mb-8 shadow-sm group-hover:bg-brand-primary transition-colors duration-300">
               <i class="fas fa-plug text-2xl text-brand-dark dark:text-white group-hover:text-white transition-colors duration-300"></i>
             </div>
             <h3 class="text-xl font-bold text-brand-dark dark:text-white mb-4 uppercase tracking-wide">Connect Audio</h3>
@@ -290,8 +340,8 @@
             </a>
           </div>
 
-          <div class="group bg-gray-50 dark:bg-[#111] p-10 border border-gray-100 dark:border-white/5 hover:border-brand-primary dark:hover:border-brand-primary transition-all duration-300 hover:-translate-y-2">
-            <div class="w-16 h-16 bg-white dark:bg-[#1a1a1a] rounded-full flex items-center justify-center mb-8 shadow-sm group-hover:bg-brand-primary transition-colors duration-300">
+          <div class="group bg-white dark:bg-[#1a1a1a] p-10 border border-gray-100 dark:border-white/5 hover:border-brand-primary dark:hover:border-brand-primary transition-all duration-300 hover:-translate-y-2">
+            <div class="w-16 h-16 bg-gray-50 dark:bg-[#111] rounded-full flex items-center justify-center mb-8 shadow-sm group-hover:bg-brand-primary transition-colors duration-300">
               <i class="fas fa-headphones text-2xl text-brand-dark dark:text-white group-hover:text-white transition-colors duration-300"></i>
             </div>
             <h3 class="text-xl font-bold text-brand-dark dark:text-white mb-4 uppercase tracking-wide">Switch & Dance</h3>
@@ -306,7 +356,8 @@
       </div>
     </section>
 
-    <section id="stylists" class="py-20 bg-gray-50 dark:bg-[#111] transition-colors duration-300 border-y border-gray-200 dark:border-white/5">
+    <!-- UPDATED: Alternated background color to white / dark:#0a0a0a for contrast -->
+    <section id="stylists" class="py-20 bg-white dark:bg-[#0a0a0a] transition-colors duration-300">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col items-center justify-center text-center mb-16">
           <div class="max-w-2xl mb-8">
@@ -321,7 +372,7 @@
         </div>
 
         <div class="grid md:grid-cols-3 gap-8">
-          <div class="group relative overflow-hidden bg-white dark:bg-[#1a1a1a]">
+          <div class="group relative overflow-hidden bg-gray-50 dark:bg-[#111]">
             <div class="relative h-96 overflow-hidden">
               <img src="https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?auto=format&fit=crop&w=800&q=80" alt="Headphones" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
               <div class="absolute inset-0 bg-brand-dark/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4">
@@ -334,7 +385,7 @@
             </div>
           </div>
 
-          <div class="group relative overflow-hidden bg-white dark:bg-[#1a1a1a]">
+          <div class="group relative overflow-hidden bg-gray-50 dark:bg-[#111]">
             <div class="relative h-96 overflow-hidden">
               <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80" alt="Transmitters" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
               <div class="absolute inset-0 bg-brand-dark/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4">
@@ -347,7 +398,7 @@
             </div>
           </div>
 
-          <div class="group relative overflow-hidden bg-white dark:bg-[#1a1a1a]">
+          <div class="group relative overflow-hidden bg-gray-50 dark:bg-[#111]">
             <div class="relative h-96 overflow-hidden">
               <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=800&q=80" alt="Party" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
               <div class="absolute inset-0 bg-brand-dark/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4">
